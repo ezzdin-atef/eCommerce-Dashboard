@@ -1,0 +1,237 @@
+.navigation {
+  flex-basis: 20%;
+  background-color: var(--dark);
+  color: #fff;
+  min-height: 100vh;
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      text-align: center;
+      margin-left: 8px;
+      a {
+        text-decoration: none;
+        color: white;    
+        display: flex;
+        align-items: center;
+        img {
+          width: 40px;
+          margin-right: 5px;
+        }
+      }
+    }
+    .collapse {
+      margin: 0 30px 0 20px;
+      cursor: pointer;
+    }
+  }
+  
+  ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 10px 20px;
+    li {
+      margin: 6px 0;
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        padding: 10px 15px;
+        display: block;
+        border-radius: 5px;
+        &.active {
+          background-color: var(--green);
+          color: white;
+        }
+      }
+      &.dropdown {
+        color: white;
+        font-size: 16px;
+        padding: 10px 15px;
+        display: block;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+        user-select: none;
+        overflow: hidden;
+        &::after {
+          content: "\f054";
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          font-size: 14px;
+          position: absolute;
+          right: 10px;
+          top: 14px;
+        }
+        ul {
+          margin: 0;
+          position: relative;
+          li {
+            margin: 0;
+            a {
+              padding: 7px 10px;
+              &.active {
+                background-color: transparent;
+                &::before {
+                  content: "\f0da";
+                  font-family: "Font Awesome 5 Free";
+                  font-weight: 900;
+                  margin-right: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
+      // .dropdown-menu-enter {
+      //   opacity: 0;
+      // } 
+      // .dropdown-menu-enter-active {
+      //   opacity: 1;
+      //   transition: opacity 200ms;
+      // } 
+      // .dropdown-menu-exit {
+      //   opacity: 1;
+      // } 
+      // .dropdown-menu-exit-active {
+      //   opacity: 0;
+      //   transition: opacity 200ms;
+      // } 
+      &.open {
+        &::after {
+          transform: rotate(90deg);
+          animation: dropdownIconOpen 0.2s;
+        }
+        ul {
+          display: block;
+          // animation: dropdownOpen 0.2s;
+          left: 0;
+        }
+      }
+      // &.close {
+      //   &::after {
+      //     transform: rotate(0deg);
+      //     animation: dropdownIconClose 0.2s;
+      //   }
+      //   ul {
+      //     animation: dropdownClose 0.2s;
+      //     left: -1000px;
+      //   }
+      // }
+      i {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.minimal {
+  flex-basis: 30px;
+  transition: flex-basis 0.3s;
+  * {
+    transition-delay: 1s;
+  }
+  header {
+    justify-content: center;
+    h1 {
+      margin-left: 0;
+      a {
+        span {
+          display: none;
+        }
+      }
+    }
+    .collapse {
+      display: none;
+    }
+  }
+  ul {
+    padding: 10px;
+    li {
+      span {
+        display: none;
+      }
+      i {
+        margin-right: 0;
+      }
+      &.dropdown {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  &:hover {
+    animation: openMenu 0.3s;
+    flex-basis: 20%;
+    header {
+      justify-content: space-between;
+      h1 {
+        margin-left: 8px;
+        a {
+          span {
+            display: initial;
+          }
+        }
+      }
+      .collapse {
+        display: initial;
+      }
+    }
+    ul {
+      padding: 10px 20px;
+      li {
+        span {
+          display: initial;
+        }
+        i {
+          margin-right: 8px;
+        }
+        &.dropdown {
+          &::after {
+            display: initial;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes openMenu {
+  from {
+    flex-basis: 30px;
+  }
+}
+
+@keyframes dropdownIconOpen {
+  from {
+    transform: rotate(0deg);
+  }
+}
+
+.dropdownOpen {
+  animation: dropdownOpen 0.2s;
+}
+@keyframes dropdownOpen {
+  from {
+    left: -1000px;
+  }
+}
+
+// @keyframes dropdownIconClose {
+//   from {
+//     transform: rotate(90deg);
+//   }
+// }
+
+.dropdownClose {
+  animation: dropdownClose 0.2s;
+}
+
+@keyframes dropdownClose {
+  from {
+    left: 0;
+  }
+}
+
