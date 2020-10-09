@@ -1,5 +1,5 @@
 .navigation {
-  flex-basis: 20%;
+  flex-basis: 280px;
   background-color: var(--dark);
   color: #fff;
   min-height: 100vh;
@@ -164,7 +164,7 @@
   }
   &:hover {
     animation: openMenu 0.3s;
-    flex-basis: 20%;
+    flex-basis: 280px;
     header {
       justify-content: space-between;
       h1 {

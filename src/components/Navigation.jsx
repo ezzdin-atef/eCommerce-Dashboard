@@ -17,7 +17,7 @@ const Navigation = (props) => {
     setSettingDropdown(!settings)
   }
   return (
-    <nav className="navigation minimal">
+    <nav className="navigation">
       <header>
         <h1><Link to="/"><img src={logo} alt="logo" /> <span>eCommerce</span></Link></h1>
         <span className="collapse"><i className="fas fa-bars"></i></span>
