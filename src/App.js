@@ -1,11 +1,11 @@
 import React from 'react';
 import Layout from './Layout';
-import Dashboard from "./Dashboard";
-import Orders from "./Orders";
-import Products from "./Products";
-import Wishlist from "./Wishlist";
-import User from "./User";
-import Payment from "./Payment";
+import Dashboard from "./pages/Dashboard";
+import Orders from "./pages/Orders";
+import Products from "./pages/Products";
+import Wishlist from "./pages/Wishlist";
+import User from "./pages/User";
+import Payment from "./pages/Payment";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
