@@ -1,4 +1,5 @@
 import React from 'react';
+import Layout from './Layout';
 import Dashboard from "./Dashboard";
 import Orders from "./Orders";
 import Products from "./Products";
@@ -11,14 +12,16 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Switch>
-          <Route path="/orders" component={Orders} /> 
-          <Route path="/products" component={Products} /> 
-          <Route path="/wishlist" component={Wishlist} /> 
-          <Route path="/setting/user" component={User} /> 
-          <Route path="/setting/payment" component={Payment} /> 
-          <Route exact path="/" component={Dashboard} /> 
-        </Switch>
+        <Layout>
+          <Switch>
+            <Route path="/orders" component={Orders} /> 
+            <Route path="/products" component={Products} /> 
+            <Route path="/wishlist" component={Wishlist} /> 
+            <Route path="/settings/user" component={User} /> 
+            <Route path="/settings/payment" component={Payment} /> 
+            <Route exact path="/" component={Dashboard} /> 
+          </Switch>
+        </Layout>
       </div>
     </BrowserRouter>
   );

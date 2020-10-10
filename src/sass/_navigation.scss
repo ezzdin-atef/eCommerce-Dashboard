@@ -32,7 +32,9 @@
     margin: 20px 0;
     padding: 10px 20px;
     li {
-      margin: 6px 0;
+      margin: 6px 0;    
+      white-space: nowrap;
+      overflow: hidden;
       a {
         text-decoration: none;
         color: white;
@@ -48,10 +50,6 @@
       &.dropdown {
         color: white;
         font-size: 16px;
-        padding: 10px 15px;
-        display: block;
-        border-radius: 5px;
-        cursor: pointer;
         position: relative;
         user-select: none;
         overflow: hidden;
@@ -63,6 +61,9 @@
           position: absolute;
           right: 10px;
           top: 14px;
+          transform: rotate(0deg);
+          transition: transform 0.2s;
+          cursor: pointer;
         }
         ul {
           margin: 0;
@@ -84,41 +85,12 @@
           }
         }
       }
-      // .dropdown-menu-enter {
-      //   opacity: 0;
-      // } 
-      // .dropdown-menu-enter-active {
-      //   opacity: 1;
-      //   transition: opacity 200ms;
-      // } 
-      // .dropdown-menu-exit {
-      //   opacity: 1;
-      // } 
-      // .dropdown-menu-exit-active {
-      //   opacity: 0;
-      //   transition: opacity 200ms;
-      // } 
       &.open {
         &::after {
           transform: rotate(90deg);
-          animation: dropdownIconOpen 0.2s;
-        }
-        ul {
-          display: block;
-          // animation: dropdownOpen 0.2s;
-          left: 0;
+          transition: transform 0.2s;
         }
       }
-      // &.close {
-      //   &::after {
-      //     transform: rotate(0deg);
-      //     animation: dropdownIconClose 0.2s;
-      //   }
-      //   ul {
-      //     animation: dropdownClose 0.2s;
-      //     left: -1000px;
-      //   }
-      // }
       i {
         margin-right: 8px;
       }
@@ -127,11 +99,9 @@
 }
 
 .minimal {
-  flex-basis: 30px;
+  flex-basis: 70px;
   transition: flex-basis 0.3s;
-  * {
-    transition-delay: 1s;
-  }
+  overflow: hidden;
   header {
     justify-content: center;
     h1 {
@@ -159,11 +129,14 @@
         &::after {
           display: none;
         }
+        ul {
+          display: none;
+          padding: 10px 20px;
+        }
       }
     }
   }
   &:hover {
-    animation: openMenu 0.3s;
     flex-basis: 280px;
     header {
       justify-content: space-between;
@@ -192,38 +165,24 @@
           &::after {
             display: initial;
           }
+          ul {
+            display: block;
+          }
         }
       }
     }
   }
 }
 
-@keyframes openMenu {
-  from {
-    flex-basis: 30px;
-  }
-}
-
-@keyframes dropdownIconOpen {
-  from {
-    transform: rotate(0deg);
-  }
-}
-
 .dropdownOpen {
   animation: dropdownOpen 0.2s;
 }
+
 @keyframes dropdownOpen {
   from {
     left: -1000px;
   }
 }
-
-// @keyframes dropdownIconClose {
-//   from {
-//     transform: rotate(90deg);
-//   }
-// }
 
 .dropdownClose {
   animation: dropdownClose 0.2s;
