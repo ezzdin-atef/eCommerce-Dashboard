@@ -8,6 +8,10 @@
   --red: #E76F51;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -24,4 +28,17 @@ code {
   display: flex;
 }
 
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+main {
+  flex-grow: 1;
+}
+
 @import "./sass/navigation";
+@import "./sass/menu";

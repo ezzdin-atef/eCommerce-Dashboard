@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, withRouter } from "react-router-dom";
 import logo from "../img/logo-mini.png";
-import { Flipper, Flipped } from 'react-flip-toolkit'
+import { Flipper, Flipped } from 'react-flip-toolkit';
 
 const Navigation = (props) => {
   const [settings, setSettingDropdown] = useState(false);
@@ -9,7 +9,7 @@ const Navigation = (props) => {
   
   // Handle Dropdown Settings
   const dropdown = (e) => {
-    if (e.target.tagName != "A" ||  e.target.href.endsWith("/")) {
+    if (e.target.tagName !== "A" ||  e.target.href.endsWith("/")) {
       settingsIcon.current.classList.toggle("open");
       setSettingDropdown(!settings);
     }

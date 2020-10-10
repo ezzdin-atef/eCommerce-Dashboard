@@ -1,0 +1,101 @@
+.menu {
+  background-color: white;
+  border-radius: 10px;
+  padding: 8px 20px;
+  margin: 15px;
+  box-shadow: 0 3px 20px 0 #2646532e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    width: 35px;
+  }
+  .list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    color: var(--dark);
+    li {
+      margin: 0 12px;
+      font-size: 16px;
+      position: relative;
+      span {
+        position: absolute;
+        background-color: var(--red);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 2px 6px;
+        color: white;
+        border-radius: 50%;
+        top: -7px;
+        right: -10px;
+      }
+    }
+    .dropdown {
+      position: relative;
+      & > li {
+        cursor: pointer;
+      }
+      ul {    
+        position: absolute;
+        background-color: var(--dark);
+        color: white;
+        list-style: none;
+        width: 300px;
+        right: -30px;
+        top: 36px;
+        border-radius: 5px;
+        padding: 10px 0;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-bottom: 12px solid var(--dark);
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          top: -10px;
+          right: 38px;
+        }
+      }
+    }
+    .notification {
+      li {
+        border-bottom: 1px solid #ffffff21;
+        padding: 10px 5px;
+        position: relative;
+        &:last-of-type {
+          border-bottom: 0;
+        }
+        .close {
+          position: absolute;
+          font-size: 12px;
+          right: 4px;
+          padding: 0;
+          width: 20px;
+          height: 20px;
+          line-height: 20px;
+          text-align: center;
+          top: 11px;
+          cursor: pointer;
+        }
+      }
+    }
+    .shopping-cart {
+      display: none;
+    }
+    .user {
+      display: flex;
+      align-items: center;
+      img {
+        border-radius: 50%;
+      }
+      h3 {
+        font-size: 16px;
+        margin: 0 5px;
+      }
+    }
+  }
+}
