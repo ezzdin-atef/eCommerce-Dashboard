@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Flipper, Flipped } from 'react-flip-toolkit';
+import { motion } from "framer-motion";
+import { connect } from 'react-redux';
 
 
 const Dropdown = props => {
   const [open, setOpen] = useState(false);
-  const [notification, setNotification] = useState(props.items);
   const  dropdownMenu = React.createRef();
 
   const handleOpen = () => {
@@ -12,7 +12,8 @@ const Dropdown = props => {
   }
 
   const handleDelete = (e) => {
-    setNotification(notification.filter(el => el !== e.target.closest("li").innerText));
+    // setNotification(notification.filter(el => el !== e.target.closest("li").innerText));
+    props.dispatch({ type: 'DELETE_NOTIFICATION', element: e.target.closest("li").innerText });
   }
 
   useEffect(() => {
@@ -28,23 +29,25 @@ const Dropdown = props => {
   }, [open]);
 
   return (
-    <Flipper flipKey={open} spring="stiff">
-      <div className="dropdown">
-        <Flipped flipId="dropdown-link">
-          <li onClick={handleOpen} ref={dropdownMenu}>{props.title}<span>{notification.length}</span></li>
-        </Flipped>
-        <Flipped flipId="dropdown-content">
-          <ul className={open? "notification d-block": "notification d-none"}>
-            {notification.map((el, index) => (
-              <React.Fragment key={index}>
-                <li>{el} <span className="fas fa-times close" onClick={handleDelete}></span></li> 
-              </React.Fragment>
-            ))}
-          </ul>
-        </Flipped>
-      </div>
-    </Flipper>
+    <div className="dropdown">
+      <li onClick={handleOpen} ref={dropdownMenu}>{props.title}<span>{props.notifications.length}</span></li>
+      {open && <motion.ul className="notification" 
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        {props.notifications.map((el, index) => (
+          <React.Fragment key={index}>
+            <li>{el} <span className="fas fa-times close" onClick={handleDelete}></span></li> 
+          </React.Fragment>
+        ))}
+      </motion.ul>}
+    </div>
   );
 }
  
-export default Dropdown;
+const mapStateToProps = (state) => {
+  return {
+    notifications: state.notifications
+  };
+}
+export default connect(mapStateToProps)(Dropdown);

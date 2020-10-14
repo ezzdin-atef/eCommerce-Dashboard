@@ -8,7 +8,7 @@ const Menu = () => {
     <div className="menu">
       <img src={logo} alt="logo" />
       <ul className="list">
-        <Dropdown title={<i className="fas fa-shopping-cart"></i>} span={<span>3</span>} items={["Item 1", "Item 2", "Item 3"]} />
+        {/* <Dropdown title={<i className="fas fa-shopping-cart"></i>} /> */}
         <Dropdown title={<i className="fas fa-bell"></i>} items={["Item 1", "Item 2", "Item 3"]} />
         <li>
           <div className="user">
@@ -20,5 +20,6 @@ const Menu = () => {
     </div>
   );
 }
+
  
 export default Menu;
