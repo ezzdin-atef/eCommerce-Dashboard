@@ -38,6 +38,7 @@ code {
 
 main {
   flex-grow: 1;
+  overflow-x: hidden;
 }
 
 @import "./sass/navigation";

@@ -102,3 +102,24 @@
     }
   }
 }
+
+@media (max-width: 576px) {
+  .menu {
+    flex-direction: column;
+    justify-content: center;
+    .list {
+      margin-top: 20px;
+      .dropdown {
+        ul {
+          right: 0;
+          left: -40px;
+          width: 240px;
+          &::before {
+            right: 0;
+            left: 50px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 .orders {
   padding: 10px 25px;
+  overflow-x: auto;
   h2 {
     font-size: 25px;
     margin-bottom: 30px;
@@ -11,9 +12,12 @@
       border-bottom: 1px solid #eee;
       border-top: 1px solid #eee;
     }
-    th, td {
+    th, td {    
       text-align: center;
       padding: 10px 20px;
+      text-overflow: clip;
+      overflow: hidden;
+      white-space: nowrap;
     }
     .shipped,
     .arrived,
