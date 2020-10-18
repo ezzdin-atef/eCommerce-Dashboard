@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import RatePopup from "../components/RatePopup";
 
 const OrderRow = (props) => {
   let [stars, setStars] = useState([]);
+  
   useEffect(() => {
     let st = [];
     for (let i = 1; i <= props.rate; i++) {
@@ -13,6 +14,7 @@ const OrderRow = (props) => {
     }
     setStars(st);
   }, []);
+
   return (
     <tr>
       <td>{props.id}</td>
@@ -22,7 +24,7 @@ const OrderRow = (props) => {
       <td className={props.status.toLowerCase()}><span>{props.status}</span></td>
       <td className="rate">
         {
-          (props.status.toLowerCase() === "delivered") && (props.rate? stars : (<a href="#">Rate The Product</a>))
+          (props.status.toLowerCase() === "delivered") && (props.rate? stars : (<RatePopup title={props.name} />))
         }
       </td>
     </tr>
