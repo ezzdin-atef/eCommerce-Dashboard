@@ -12,7 +12,6 @@ const Dropdown = props => {
   }
 
   const handleDelete = (e) => {
-    // setNotification(notification.filter(el => el !== e.target.closest("li").innerText));
     props.dispatch({ type: 'DELETE_NOTIFICATION', element: e.target.closest("li").innerText });
   }
 
@@ -35,7 +34,7 @@ const Dropdown = props => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        {props.notifications.length == 0? <span className="alter">There is no notification</span> : props.notifications.map((el, index) => (
+        {props.notifications.length === 0? <span className="alter">There is no notification</span> : props.notifications.map((el, index) => (
           <React.Fragment key={index}>
             <li>{el} <span className="fas fa-times close" onClick={handleDelete}></span></li> 
           </React.Fragment>

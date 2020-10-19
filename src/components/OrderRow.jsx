@@ -13,7 +13,7 @@ const OrderRow = (props) => {
       st.push(<i key={i+1} className="far fa-star"></i>);
     }
     setStars(st);
-  }, []);
+  }, [props.rate]);
 
   return (
     <tr>

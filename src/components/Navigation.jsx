@@ -28,6 +28,7 @@ const Navigation = (props) => {
       setSettingDropdown(false);
       settingsIcon.current.classList.remove("open");
     }
+    // eslint-disable-next-line
   }, [props.location.pathname]);
 
   return (

@@ -16,7 +16,7 @@ function reducer(state = initialState, action) {
   switch(action.type) {
     case DELETE_NOTIFICATION:
       return {
-        notifications: state.notifications.filter((el) => el != action.element)
+        notifications: state.notifications.filter((el) => el !== action.element)
       };
     default:
       return state;

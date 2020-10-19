@@ -39,6 +39,9 @@
       .stars {
         i {
           font-size: 30px;
+          &.active {
+            color: var(--yellow);
+          }
         }
       }
     }
@@ -49,19 +52,10 @@
       padding: 0 5px;
       button {
         flex-basis: 48%;
-        cursor: pointer;
-        background-color: transparent;
-        border: 0;
-        font-size: 16px;
-        color: var(--red);
-        padding: 8px 10px;
         font-weight: 600;
-        font-family: 'Open Sans', sans-serif;
       }
-      #submit {
-        background-color: var(--green);
-        border-radius: 5px;
-        color: white;
+      #close {
+        color: var(--red);
       }
     }
   }

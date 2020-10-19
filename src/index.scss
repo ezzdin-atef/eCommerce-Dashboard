@@ -2,6 +2,7 @@
 
 :root {
   --green: #2A9D8F;
+  --green-dark: #218478;
   --dark: #264653;
   --yellow: #E9C46A;
   --orange: #F4A261;
@@ -47,7 +48,9 @@ main {
   overflow-x: hidden;
 }
 
+@import "./sass/btn";
 @import "./sass/navigation";
 @import "./sass/menu";
 @import "./sass/orders";
+@import "./sass/wishlist";
 @import "./sass/popup";

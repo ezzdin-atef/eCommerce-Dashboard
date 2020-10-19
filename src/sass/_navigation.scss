@@ -3,6 +3,8 @@
   background-color: var(--dark);
   color: #fff;
   min-height: 100vh;
+  height: 100%;
+  z-index: 10;
   header {
     display: flex;
     justify-content: space-between;
