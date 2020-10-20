@@ -15,4 +15,19 @@
       background-color: var(--green-dark);
     }
   }
+  &-warning {
+    background-color: var(--yellow);
+    &:hover {
+      background-color: var(--yellow-dark);
+    }
+  }
+  &-danger {
+    background-color: var(--red);
+    &:hover {
+      background-color: var(--red-dark);
+    }
+    &-light {
+      color: var(--red);
+    }
+  }
 }

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from "react-redux";
 import { motion } from "framer-motion";
 
 const RatePopup = (props) => {
   const [open, setOpen] = useState(false);
+  const [rate, setRate] = useState(null);
   
   const handleShow = (e) => {
     e.preventDefault();
@@ -12,7 +14,8 @@ const RatePopup = (props) => {
 
   const handleSave = (e) => {
     e.preventDefault();
-    console.log("save"); // Save to database
+    // Save to database
+    props.dispatch({ type: "ADD_RATE", payload: { id: props.id, rate: rate  } });
     setOpen(!open);
     document.removeEventListener('click', handleClose);
   }
@@ -31,8 +34,8 @@ const RatePopup = (props) => {
     // eslint-disable-next-line
   }, [open]);
 
-  const handleClickStars = (e) => {
-    console.log("lm");
+  const handleClickStars = (e, rate) => {
+    setRate(rate);
     e.target.className = "fas fa-star";
     let prev = e.target.previousSibling;
     while (prev) {
@@ -58,16 +61,16 @@ const RatePopup = (props) => {
             </header>
             <div className="main">
               <div className="stars">
-                <i className="far fa-star" onClick={handleClickStars}></i>
-                <i className="far fa-star" onClick={handleClickStars}></i>
-                <i className="far fa-star" onClick={handleClickStars}></i>
-                <i className="far fa-star" onClick={handleClickStars}></i>
-                <i className="far fa-star" onClick={handleClickStars}></i>
+                <i className="far fa-star" onClick={(e) => handleClickStars(e, "1")}></i>
+                <i className="far fa-star" onClick={(e) => handleClickStars(e, "2")}></i>
+                <i className="far fa-star" onClick={(e) => handleClickStars(e, "3")}></i>
+                <i className="far fa-star" onClick={(e) => handleClickStars(e, "4")}></i>
+                <i className="far fa-star" onClick={(e) => handleClickStars(e, "5")}></i>
               </div>
             </div>
             <footer>
               <button id="submit" className="btn btn-primary" onClick={handleSave}>Submit</button>
-              <button id="close" className="btn" onClick={handleShow}>Close</button>
+              <button id="close" className="btn btn-danger-light" onClick={handleShow}>Close</button>
             </footer>
           </motion.div>
         </motion.div>
@@ -76,4 +79,4 @@ const RatePopup = (props) => {
   );
 }
 
-export default RatePopup;
+export default connect()(RatePopup);

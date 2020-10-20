@@ -5,8 +5,10 @@
   --green-dark: #218478;
   --dark: #264653;
   --yellow: #E9C46A;
+  --yellow-dark: #dcb964;
   --orange: #F4A261;
   --red: #E76F51;
+  --red-dark: #c55a40;
 }
 
 * {
@@ -44,8 +46,17 @@ button {
 }
 
 main {
+  transition: margin-left 0.3s;
   flex-grow: 1;
   overflow-x: hidden;
+  margin-left: 280px;
+  min-height: 100vh;
+}
+
+.toastify {
+  & > div {
+    background-color: var(--dark);
+  }
 }
 
 @import "./sass/btn";
@@ -53,4 +64,5 @@ main {
 @import "./sass/menu";
 @import "./sass/orders";
 @import "./sass/wishlist";
+@import "./sass/products";
 @import "./sass/popup";

@@ -1,9 +1,11 @@
 .orders {
   padding: 10px 25px;
   overflow-x: auto;
-  h2 {
-    font-size: 25px;
-    margin-bottom: 30px;
+  header {
+    h2 {
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
   }
   table {
     width: 100%;

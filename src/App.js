@@ -9,6 +9,8 @@ import Payment from "./pages/Payment";
 import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Layout>
+            <ToastContainer className="toastify" />
             <Switch>
               <Route path="/orders" component={Orders} /> 
               <Route path="/products" component={Products} /> 

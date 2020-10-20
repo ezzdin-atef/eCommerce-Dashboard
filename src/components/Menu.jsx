@@ -1,15 +1,16 @@
 import React from 'react';
 import logo from "../img/logo-mini.png";
 import user from "../img/user.jpeg";
-import Dropdown from './Dropdown';
+import Notifications from './Notifications';
+import ShoppingCart from './ShoppingCart';
 
 const Menu = () => {
   return (
     <div className="menu">
       <img src={logo} alt="logo" />
       <ul className="list">
-        {/* <Dropdown title={<i className="fas fa-shopping-cart"></i>} /> */}
-        <Dropdown title={<i className="fas fa-bell"></i>} items={["Item 1", "Item 2", "Item 3"]} />
+        <ShoppingCart />
+        <Notifications />
         <li>
           <div className="user">
             <img src={user} alt="user"/>

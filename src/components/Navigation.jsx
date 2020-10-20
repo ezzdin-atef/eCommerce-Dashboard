@@ -18,7 +18,7 @@ const Navigation = (props) => {
   // Handle Collapse
   const handleCollapse = (e) => {
     console.log();
-    e.target.parentNode.parentNode.classList.toggle("minimal");
+    e.target.parentNode.parentNode.parentNode.classList.toggle("minimal");
   }
 
   useEffect(() => {

@@ -1,15 +1,30 @@
 import React from 'react';
-import OrderRow from '../components/OrderRow';
+import { connect } from 'react-redux';
+import RatePopup from "../components/popups/RatePopup";
 
-const Orders = () => {
+const Orders = props => {
+
+  const displayStars = (rate) => {
+    let stars = [];
+    for (let i = 1; i <= rate; i++) {
+      stars.push(<i key={i} className="fas fa-star"></i>);
+    }
+    for (let i = rate; i < 5; i++) {
+      stars.push(<i key={i+1} className="far fa-star"></i>);
+    }
+    return stars;
+  }
+
   return (
     <div className="orders">
-      <h2>Your Orders</h2>
+      <header>
+        <h2>Your Orders</h2>
+      </header>
       <table>
         <thead>
           <tr>
             <th>#ID</th>
-            <th>Name</th>
+            <th>Title</th>
             <th>Shipped By</th>
             <th>Condition</th>
             <th>Status</th>
@@ -17,14 +32,30 @@ const Orders = () => {
           </tr>
         </thead>
         <tbody>
-          <OrderRow id="1215" name="TP-Link Router" by="Souq" condition="New" status="Shipped" rate="" />
-          <OrderRow id="1215" name="Head First Java" by="Amazon" condition="New" status="Arrived" rate="" />
-          <OrderRow id="1215" name="Cracking the Coding Interview" by="Laakmann McDowell" condition="Used" status="Delivered" rate="" />
-          <OrderRow id="1215" name="Eloquent JavaScript" by="Marijn Haverbeke" condition="New" status="Delivered" rate="4" />
+          {props.orders.map(el => (
+            <tr key={el.id}>
+              <td>{el.id}</td>
+              <td>{el.title}</td>
+              <td>{el.by}</td>
+              <td>{el.condition}</td>
+              <td className={el.status.toLowerCase()}><span>{el.status}</span></td>
+              <td className="rate">
+                {
+                  (el.status.toLowerCase() === "delivered") && (el.rate? displayStars(el.rate) : (<RatePopup id={el.id} title={el.title} />))
+                }
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
   );
 }
  
-export default Orders;
+const mapStateToProps = (state) => {
+  return {
+    orders: state.orders
+  };
+}
+
+export default connect(mapStateToProps)(Orders);
