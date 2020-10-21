@@ -9,6 +9,9 @@
   color: white;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  &-light {
+    color: var(--dark);
+  }
   &-primary {
     background-color: var(--green);
     &:hover {

@@ -43,8 +43,8 @@ const ConfirmPopup = props => {
               <p>Are you sure you waىt to delete "{props.title}"</p>
             </div>
             <footer>
-              <button id="submit" className="btn btn-primary" onClick={handleConfirm}>Confirm</button>
-              <button id="close" className="btn btn-danger-light" onClick={handleShow}>Close</button>
+              <button id="submit" className="btn btn-danger" onClick={handleConfirm}>Confirm</button>
+              <button id="close" className="btn btn-light" onClick={handleShow}>Close</button>
             </footer>
           </motion.div>
         </motion.div>
