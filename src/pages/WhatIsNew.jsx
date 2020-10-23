@@ -14,7 +14,6 @@ const WhatIsNew = () => {
               <li>Add "What's New?" page</li>
               <li>Add The Alter Div in products and wishlist pages</li>
               <li>Make the delete smooth in wishlist and products pages</li>
-              <li></li>
             </ul>
           </p>
         </div>
