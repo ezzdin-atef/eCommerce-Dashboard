@@ -1,0 +1,28 @@
+.whatisnew {
+  padding: 10px 25px;
+  overflow-x: auto;
+  header {
+    h2 {
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
+  }
+  .content {
+    .version {
+      padding: 20px 15px;
+      color: var(--dark);
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #eee;
+      }
+      h4 {
+        font-size: 22px;
+        margin: 10px 0;
+        color: var(--green);
+        span {
+          font-size: 13px;
+          color: var(--green-dark);
+        }
+      }
+    }
+  }
+}

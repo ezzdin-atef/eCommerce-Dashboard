@@ -55,7 +55,7 @@ const Navigation = (props) => {
             </Flipped>
           </li>
           </Flipped>
-          <Flipped flipId="dropdown-1"><li><NavLink to="/temp"><i className="fas fa-bookmark"></i> <span>Temp Link</span></NavLink></li></Flipped>
+          <Flipped flipId="dropdown-1"><li><NavLink to="/whatisnew"><i className="fas fa-file-alt"></i> <span>What's New ?</span></NavLink></li></Flipped>
         </ul>
       </Flipper>
     </nav>
