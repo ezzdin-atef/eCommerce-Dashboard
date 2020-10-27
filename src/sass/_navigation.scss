@@ -184,7 +184,7 @@
 @media (max-width: 992px) {
   .navigation {
     width: 70px;
-    position: absolute;
+    position: fixed;
     flex-shrink: 0;
     transition: width 0.3s;
     overflow: hidden;

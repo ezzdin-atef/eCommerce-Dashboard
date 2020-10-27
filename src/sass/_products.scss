@@ -19,3 +19,11 @@
     }
   }
 }
+
+@media (max-width: 576px) {
+  .products {
+    header {
+      flex-direction: column;
+    }
+  }
+}

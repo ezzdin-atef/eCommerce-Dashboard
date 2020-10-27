@@ -1,10 +1,10 @@
 import React from 'react';
+import { connect } from "react-redux";
 import logo from "../img/logo-mini.png";
-import user from "../img/user.jpeg";
 import Notifications from './Notifications';
 import ShoppingCart from './ShoppingCart';
 
-const Menu = () => {
+const Menu = props => {
   return (
     <div className="menu">
       <img src={logo} alt="logo" />
@@ -13,8 +13,8 @@ const Menu = () => {
         <Notifications />
         <li>
           <div className="user">
-            <img src={user} alt="user"/>
-            <h3>Ezzdin Atef</h3>
+            <img src={props.user.image} alt={props.user.username} />
+            <h3>{props.user.name}</h3>
           </div>
         </li>
       </ul>
@@ -22,5 +22,10 @@ const Menu = () => {
   );
 }
 
- 
-export default Menu;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  };
+}
+
+export default connect(mapStateToProps)(Menu);

@@ -1,0 +1,156 @@
+.user-settings,
+.payment-settings {
+  padding: 10px 25px;
+  overflow-x: auto;
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
+  }
+  .content {
+    form {
+      .user-img {
+        width: 200px;
+        margin-bottom: 20px;
+        position: relative;
+        border-radius: 50%;
+        img {
+          width: 100%;    
+          border-radius: 50%;
+        }
+        .img-change {
+          position: absolute;
+          border-radius: 50%;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          background-color: #eeeeee7d;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 20px;
+          color: var(--dark);
+          cursor: pointer;
+          opacity: 0;
+          transition: opacity 0.2s;
+        }
+        &:hover {
+          .img-change {
+            opacity: 1;
+          }
+        }
+      }
+      .form-input {
+        width: 800px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        margin: 20px 0;
+        label {
+          margin-right: 10px;
+        }
+        input {
+          font-family: 'Open Sans', sans-serif;
+          font-size: 18px;
+          width: 500px;
+          padding: 8px 5px;
+          border: 1px solid #eee;
+          border-radius: 5px;
+          &:focus {
+            outline: none;
+            border-color: var(--green);
+          }
+        }
+      }
+      button {
+        padding: 10px 30px;
+        i {
+          margin-right: 3px;
+        }
+      }
+    }
+    .payment {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      box-shadow: 0 0 15px 5px #26465312;
+      margin: 10px 0;
+      padding: 25px 15px;
+      border-radius: 5px;
+      width: 400px;
+      position: relative;
+      h4 {
+        margin: 0 10px;
+      }
+      i {
+        color: var(--red);
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        justify-self: flex-end;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .user-settings,
+  .payment-settings {
+    .content {
+      form {
+        .form-input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .user-settings,
+  .payment-settings {
+    .content {
+      form {
+        .form-input {
+          flex-direction: column;
+          input {
+            margin: 10px 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .user-settings,
+  .payment-settings {
+    header {
+      flex-direction: column;
+      h2 {
+        margin-bottom: 10px;
+      }
+      button {
+        margin: 10px 0;
+      }
+    }
+    .content {
+      form {
+        .user-img {
+          width: 100%;
+        }
+      }
+      .payment {
+        width: 100%;
+      }
+    }
+  }
+}

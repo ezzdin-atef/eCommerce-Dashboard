@@ -11,3 +11,7 @@ export const DELETE_WISHLIST = "DELETE_WISHLIST";
 export const ADD_RATE = "ADD_RATE";
 
 export const DELETE_PRODUCT = "DELETE_PRODUCT";
+
+export const UPDATE_USER = "UPDATE_USER";
+
+export const DELETE_PAYMENT = "DELETE_PAYMENT";

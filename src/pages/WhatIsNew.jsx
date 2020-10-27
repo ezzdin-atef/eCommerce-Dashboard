@@ -13,6 +13,10 @@ const WhatIsNew = () => {
             <ul>
               <li><span className="fix">Fix</span>Fix the padding and margin problems</li>
               <li><span className="improve">Improve</span>Add budget to the what's new page</li>
+              <li><span className="feature">feature</span>Finish the user settings page</li>
+              <li><span className="feature">feature</span>Finish the payment settings page</li>
+              <li><span className="improve">improve</span>Connect the settings with redux</li>
+              <li><span className="fix">Fix</span>Fix the navigation problem</li>
             </ul>
           </p>
         </div>

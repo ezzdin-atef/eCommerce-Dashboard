@@ -1,5 +1,15 @@
 import _ from "lodash";
-import { DELETE_NOTIFICATION, UPADTE_ITEM_COUNT_SHOPPING_CART, ADD_TO_SHOPPING_CART, DELETE_ITEM_SHOPPING_CART, DELETE_WISHLIST, ADD_RATE, DELETE_PRODUCT } from './actions';
+import { 
+  DELETE_NOTIFICATION, 
+  UPADTE_ITEM_COUNT_SHOPPING_CART, 
+  ADD_TO_SHOPPING_CART, 
+  DELETE_ITEM_SHOPPING_CART, 
+  DELETE_WISHLIST, 
+  ADD_RATE, 
+  DELETE_PRODUCT, 
+  UPDATE_USER, 
+  DELETE_PAYMENT 
+} from './actions';
 import applewatch from "./img/apple-watch.jpg";
 import PerregauxWatch from "./img/Girard-Perregaux-Watch.jpg";
 import huaweiLaptop from "./img/huawei-honor-magicbook.jpg";
@@ -11,9 +21,30 @@ import samsungnote20 from "./img/samsung-note20.png";
 import asus from "./img/asus.jpg";
 import hp from "./img/hp.jpg";
 import lenovoideapad from "./img/lenovo-ideapad.png";
+import user from "./img/user.jpeg";
 
 
 const initialState = {
+  user: {
+    image: user,
+    username: "ezzdin_atef",
+    name: "Ezzdin Atef",
+    email: "ezzdin1125@gmail.com",
+    your_website: "https://ezzdinatef.me",
+    twitter: "https://twitter.com/ezzdin_atef"
+  },
+  payments: [
+    {
+      id: "15454646",
+      type: "visa",
+      number: "**** **** **** **54"
+    },
+    {
+      id: "65465448",
+      type: "master",
+      number: "**** **** **** **91"
+    }
+  ],
   notifications: [
     "Item 1",
     "Item 2",
@@ -201,6 +232,16 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         products: state.products.filter(el => el.id !== action.payload.id)
+      }
+    case UPDATE_USER: 
+      return {
+        ...state, 
+        user: action.payload
+      }
+    case DELETE_PAYMENT:
+      return {
+        ...state,
+        payments: state.payments.filter(el => el.id !== action.payload.id)
       }
     default:
       return state;
