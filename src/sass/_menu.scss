@@ -1,7 +1,7 @@
 .menu {
   background-color: #f1f1f1;
   // border-radius: 10px;
-  padding: 10px 25px;
+  padding: 10px 10px;
   // margin: 15px;
   // box-shadow: 0 3px 20px 0 #2646532e;
   display: flex;
@@ -18,11 +18,12 @@
     margin: 0;
     color: var(--dark);
     .dropdown {
+      margin: 0 2px;
       position: relative;
       & > li {
         cursor: pointer;
         font-size: 16px;
-        margin: 0 12px;
+        margin: 0 10px;
         position: relative;
         span {
           position: absolute;
@@ -192,6 +193,7 @@
     .user {
       display: flex;
       align-items: center;
+      margin-left: 8px;
       img {
         border-radius: 50%;
       }
