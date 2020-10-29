@@ -8,6 +8,15 @@ const WhatIsNew = () => {
       </header>
       <div className="content">
         <div className="version">
+          <h4>v1.1.2 <span>(Updated on: 29/10/2020)</span></h4>
+          <p>
+            <ul>
+              <li><span className="fix">Fix</span>Fix the dropdown menu problem</li>
+              <li><span className="improve">improve</span>delete the bolits from the list in what's new page</li>
+            </ul>
+          </p>
+        </div>
+        <div className="version">
           <h4>v1.1.1 <span>(Updated on: 27/10/2020)</span></h4>
           <p>
             <ul>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, NavLink, withRouter } from "react-router-dom";
 import logo from "../img/logo-mini.png";
 import { Flipper, Flipped } from 'react-flip-toolkit';
+import { motion } from "framer-motion";
 
 const Navigation = (props) => {
   const [settings, setSettingDropdown] = useState(false);
@@ -46,12 +47,12 @@ const Navigation = (props) => {
           <Flipped inverseFlipId="dropdown-2">
           <li className={props.location.pathname.includes("/settings")? "dropdown open" : "dropdown" } onClick={dropdown} ref={settingsIcon}><Link to="/" className={props.location.pathname.includes("/settings")? "active" : ""} onClick={(e) => e.preventDefault()}><i className="fas fa-cog"></i> <span>Settings</span></Link>
             <Flipped flipId="dropdown-content">
-              <>
-              {settings && <ul>
-                <li><NavLink to="/settings/user">User</NavLink></li>
-                <li><NavLink to="/settings/payment">Payment</NavLink></li>
-              </ul>}
-              </>
+              {settings && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
+                <ul>
+                  <li><NavLink to="/settings/user">User</NavLink></li>
+                  <li><NavLink to="/settings/payment">Payment</NavLink></li>
+                </ul>
+              </motion.div>}
             </Flipped>
           </li>
           </Flipped>
