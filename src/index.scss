@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
 :root {
+  --dark: #264653;
+  --dark-dark: #1c323b;
   --green: #2A9D8F;
   --green-dark: #218478;
-  --dark: #264653;
   --yellow: #E9C46A;
   --yellow-dark: #dcb964;
   --orange: #F4A261;
@@ -85,11 +86,14 @@ main {
 }
 
 @import "./sass/btn";
+@import "./sass/config";
 @import "./sass/navigation";
 @import "./sass/menu";
+@import "./sass/dashboard";
 @import "./sass/orders";
 @import "./sass/wishlist";
 @import "./sass/products";
 @import "./sass/popup";
 @import "./sass/whatisnew";
+@import "./sass/componentsPage";
 @import "./sass/settings";

@@ -25,7 +25,7 @@ const User = props => {
           <div className="user-img">
             <img src={user.image} alt={user.username}/>
             <div className="img-change">
-              <i class="fas fa-camera"></i>
+              <i className="fas fa-camera"></i>
               <span>Change Your Picture</span>
             </div>
           </div>

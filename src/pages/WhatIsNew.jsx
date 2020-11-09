@@ -8,6 +8,17 @@ const WhatIsNew = () => {
       </header>
       <div className="content">
         <div className="version">
+          <h4>v1.2.2 <span>(Updated on: 9/11/2020)</span></h4>
+          <p>
+            <ul>
+              <li><span className="feature">Feature</span>Add Statistics Numbers to the Dashboard</li>
+              <li><span className="feature">Feature</span>Add Config Menu and enable to change color schema</li>
+              <li><span className="fix">Fix</span>Isolate the dropdown menu in a component and make it easy to add more !!</li>
+              <li><span className="feature">Feature</span>Add Buttons Components Page</li>
+            </ul>
+          </p>
+        </div>
+        <div className="version">
           <h4>v1.1.2 <span>(Updated on: 29/10/2020)</span></h4>
           <p>
             <ul>

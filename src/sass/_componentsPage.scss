@@ -1,0 +1,25 @@
+.components {
+  padding: 10px 25px;
+  overflow-x: auto;
+  header {
+    h2 {
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
+  }
+  .content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &-section {
+    flex-basis: 48%;
+    margin: 5px 0;
+    button {
+      margin: 5px;
+      i {
+        margin: 0 2px;
+      }
+    }
+  }
+}

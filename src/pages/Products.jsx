@@ -9,7 +9,7 @@ const Products = props => {
   const AlterDiv = () => {
     return (
       <motion.div className="alter" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <h3>You Don't Have Any Products 🙁</h3>
+        <h3>You Don't Have Any Products <span role="img" aria-label="Sad Emoji">🙁</span></h3>
         <button className="btn btn-primary"><i className="fas fa-plus"></i> Add New</button>
       </motion.div>
     );

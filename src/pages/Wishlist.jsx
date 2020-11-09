@@ -18,7 +18,7 @@ const Wishlist = props => {
   const AlterDiv = () => {
     return (
       <motion.div className="alter" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <h3>You Don't Have Any Items in your wishlist 🙁</h3>
+        <h3>You Don't Have Any Items in your wishlist <span role="img" aria-label="Sad Emoji">🙁</span></h3>
         <Link to="/">Explore Now</Link>
       </motion.div>
     );

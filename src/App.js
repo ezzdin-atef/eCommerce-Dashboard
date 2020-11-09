@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from './Layout';
+import Config from './components/Config';
 import Dashboard from "./pages/Dashboard";
 import Orders from "./pages/Orders";
 import Products from "./pages/Products";
@@ -7,6 +8,7 @@ import Wishlist from "./pages/Wishlist";
 import WhatIsNew from "./pages/WhatIsNew";
 import User from "./pages/User";
 import Payment from "./pages/Payment";
+import ButtonsPage from "./pages/Components Pages/ButtonsPage";
 import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -19,6 +21,7 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Layout>
+            <Config />
             <ToastContainer className="toastify" />
             <Switch>
               <Route path="/orders" component={Orders} /> 
@@ -27,6 +30,7 @@ function App() {
               <Route path="/whatisnew" component={WhatIsNew} /> 
               <Route path="/settings/user" component={User} /> 
               <Route path="/settings/payment" component={Payment} /> 
+              <Route path="/components/buttons" component={ButtonsPage} /> 
               <Route exact path="/" component={Dashboard} /> 
             </Switch>
           </Layout>

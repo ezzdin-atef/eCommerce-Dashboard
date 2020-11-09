@@ -11,7 +11,7 @@ const Payment = props => {
   const AlterDiv = () => {
     return (
       <motion.div className="alter" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <h3>You Don't Payment Method 🙁</h3>
+        <h3>You Don't Payment Method <span role="img" aria-label="Sad Emoji">🙁</span></h3>
         <button className="btn btn-primary"><i className="fas fa-plus"></i> Add New</button>
       </motion.div>
     );
@@ -26,7 +26,7 @@ const Payment = props => {
       {props.payments.length > 0? <div className="content">
         {props.payments.map(el => (
           <div key={el.id} className="payment">
-            {el.type == "visa" ? (
+            {el.type === "visa" ? (
               <svg xmlns="http://www.w3.org/2000/svg" width="45.764" height="14.321" viewBox="0 0 45.764 14.321">
                 <g id="visa_1_" data-name="visa (1)" transform="translate(0 -100.23)">
                   <g id="Group_66" data-name="Group 66" transform="translate(4.276 100.23)">

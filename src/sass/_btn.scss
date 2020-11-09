@@ -1,4 +1,6 @@
-.btn {
+.btn,
+.btn-sm,
+.btn-lg {
   border: 0;
   font-family: 'Open Sans', sans-serif;
   background-color: transparent;
@@ -9,19 +11,62 @@
   color: white;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
-  &-light {
-    color: var(--dark);
+
+  // Sizes
+  &-sm {
+    padding: 7px 10px;
+    font-size: 13px;
   }
+  &-lg {
+    padding: 14px 24px;
+    font-size: 18px;
+  }
+
+  // Styles
+  &-round {
+    border-radius: 25px;
+    &-full {
+      border-radius: 50%;
+      padding: 10px;
+      min-width: 40px;
+    }
+  }
+
+  // Colors Schema
   &-primary {
+    background-color: var(--dark);
+    &:hover {
+      background-color: var(--dark-dark);
+    }
+    &-light {
+      color: var(--dark);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &-success {
     background-color: var(--green);
     &:hover {
       background-color: var(--green-dark);
+    }
+    &-light {
+      color: var(--green);
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   &-warning {
     background-color: var(--yellow);
     &:hover {
       background-color: var(--yellow-dark);
+    }
+    &-light {
+      color: var(--yellow);
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   &-danger {
@@ -31,6 +76,147 @@
     }
     &-light {
       color: var(--red);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &-info {
+    background-color: var(--blue);
+    &:hover {
+      background-color: var(--blue-dark);
+    }
+    &-light {
+      color: var(--blue);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+
+  // Social Media
+  &-facebook {
+    background-color: #3b5998;
+    &:hover {
+      background-color: #2f4472;
+    }
+    &-light {
+      color: #3b5998;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &-twitter {
+    background-color: #1da1f2;
+    &:hover {
+      background-color: #1d8dd3;
+    }
+    &-light {
+      color: #1da1f2;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &-youtube {
+    background-color: #cd201f;
+    &:hover {
+      background-color: #a51a1a;
+    }
+    &-light {
+      color: #cd201f;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &-linkedin {
+    background-color: #0077B5;
+    &:hover {
+      background-color: #01679e;
+    }
+    &-light {
+      color: #0077B5;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &-pinterest {
+    background-color: #bd081c;
+    &:hover {
+      background-color: #920919;
+    }
+    &-light {
+      color: #bd081c;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &-behance {
+    background-color: #1ab7ea;
+    &:hover {
+      background-color: #1693bd;
+    }
+    &-light {
+      color: #1ab7ea;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &-dribbble {
+    background-color: #ea4c89;
+    &:hover {
+      background-color: #b83d6c;
+    }
+    &-light {
+      color: #ea4c89;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &-reddit {
+    background-color: #ff5700;
+    &:hover {
+      background-color: #ca4604;
+    }
+    &-light {
+      color: #ff5700;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &-instagram {
+    background-color: #e4405f;
+    &:hover {
+      background-color: #af3148;
+    }
+    &-light {
+      color: #e4405f;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.button-group {
+  display: inline-block;
+  .btn {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 0;
+    &:first-of-type {
+      border-radius: 5px 0 0 5px;
+    }
+    &:last-of-type {
+      border-radius: 0 5px 5px 0;
     }
   }
 }

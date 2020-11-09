@@ -1,0 +1,49 @@
+.config-icon {
+  position: absolute;
+  right: 0;
+  top: 12em;
+  font-size: 22px;
+  padding: 10px 15px;
+  color: var(--dark);
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.config {
+  position: absolute;
+  right: 0;
+  top: 20em;
+  padding: 10px 15px;
+  // color: var(--dark);
+  background-color: var(--dark);
+  color: white;
+  border-radius: 5px 0 0 5px;
+  .config-section {
+    h4 {
+      margin: 0;
+    }
+    .colors,
+    button {
+      margin: 10px 0;
+      padding: 3px 2px;
+      font-size: 14px;
+      border: 0;
+      background-color: white;
+      font-family: 'Open Sans', sans-serif;
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      background-color: var(--green);
+      color: white;
+      border: 0;
+      margin-left: 3px;
+      cursor: pointer;
+      padding: 4px 5px;
+    }
+  }
+}
