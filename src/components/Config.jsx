@@ -16,8 +16,7 @@ const Config = () => {
       <span className="config-icon" onClick={() => setOpen(!open)}>
         <i className="fas fa-cogs"></i>
       </span>
-      {open && (
-        <motion.div className="config" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <motion.div className={open? "config" : "config o-zere"}>
           <div className="config-section">
             <h4>Colors</h4>
             <select className="colors" name="colors" onChange={(e) => setSchema(e.target.value)} defaultValue={schema}>
@@ -29,7 +28,7 @@ const Config = () => {
             <button><i className="fas fa-check" onClick={ChangeColors}></i></button>
           </div>
         </motion.div>
-      )}
+      
     </>
   );
 }

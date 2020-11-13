@@ -17,6 +17,8 @@
   right: 0;
   top: 20em;
   padding: 10px 15px;
+  z-index: 10000;
+  transition: opacity 0.3s ease;
   // color: var(--dark);
   background-color: var(--dark);
   color: white;

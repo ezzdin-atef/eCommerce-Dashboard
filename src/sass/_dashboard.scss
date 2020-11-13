@@ -36,4 +36,50 @@
       }
     }
   }
+  .charts {
+    display: flex;
+    justify-content: space-between;
+    & > div {
+      position: relative;
+      flex-basis: 31.333333%;
+      margin: 100px 0 20px 0;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 -5px 30px -1px #1c323b52;
+      height: 220px;
+      canvas {
+        margin-top: -70px;
+        background-color: var(--green);
+        color: white;
+        border-radius: 10px;
+        transition: all 0.2s ease;
+      }
+      &:first-of-type {
+        canvas {
+          background-color: var(--blue);
+        }
+      }
+      &:last-of-type {
+        canvas {
+          background-color: var(--red);
+        }
+      }
+      h3 {
+        text-align: center;
+        color: var(--dark);
+        margin: 5px 0;
+        font-size: 16px;
+        position: absolute;
+        bottom: 8px;
+        left: 0;
+        right: 0;
+      }
+      &:hover {
+        canvas {
+          margin-top: -80px;
+        }
+      }
+    }
+  }
 }
