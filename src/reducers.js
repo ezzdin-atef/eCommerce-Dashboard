@@ -21,12 +21,12 @@ import samsungnote20 from "./img/samsung-note20.png";
 import asus from "./img/asus.jpg";
 import hp from "./img/hp.jpg";
 import lenovoideapad from "./img/lenovo-ideapad.png";
-import user from "./img/user.jpeg";
+import userImage from "./img/user.jpeg";
 
 
 const initialState = {
   user: {
-    image: user,
+    image: userImage,
     username: "ezzdin_atef",
     name: "Ezzdin Atef",
     email: "ezzdin1125@gmail.com",

@@ -37,6 +37,7 @@
             width: 90px;
             font-size: 14px;
             color: white;
+            text-transform: capitalize;
             &.feature {
               background-color: var(--blue);
             }

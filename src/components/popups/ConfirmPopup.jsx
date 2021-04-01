@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from "react-redux";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ConfirmPopup = props => {
   const [open, setOpen] = useState(false);
@@ -32,23 +32,25 @@ const ConfirmPopup = props => {
   return (
     <>
       <button className="btn btn-danger-light" onClick={handleShow}><i className="fas fa-trash-alt"></i> Delete</button>
-      {open && (
-        <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }} className="popup">
-          <motion.div animate={{ top: "35%" }} initial={{ top: "-10%" }} className="content">
-            <header>
-              <h3>Are you sure</h3>
-              <i className="fas fa-times-circle" onClick={handleShow}></i>
-            </header>
-            <div className="main">
-              <p>Are you sure you waىt to delete "{props.title}"</p>
-            </div>
-            <footer>
-              <button id="submit" className="btn btn-danger" onClick={handleConfirm}>Confirm</button>
-              <button id="close" className="btn btn-light" onClick={handleShow}>Close</button>
-            </footer>
+      <AnimatePresence>
+        {open && (
+          <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }}  className="popup">
+            <motion.div animate={{ top: "35%" }} initial={{ top: "-10%" }} exit={{ top: "-10%" }} className="content">
+              <header>
+                <h3>Are you sure</h3>
+                <i className="fas fa-times-circle" onClick={handleShow}></i>
+              </header>
+              <div className="main">
+                <p>Are you sure you waىt to delete "{props.title}"</p>
+              </div>
+              <footer>
+                <button id="submit" className="btn btn-danger" onClick={handleConfirm}>Confirm</button>
+                <button id="close" className="btn btn-light" onClick={handleShow}>Close</button>
+              </footer>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      )}
+        )}
+      </AnimatePresence>
     </>
   );
 }
