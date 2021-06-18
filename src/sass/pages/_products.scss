@@ -3,19 +3,37 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .modal-btn {
+      @extend .btn;
+      @extend .btn-primary;
+    }
   }
   &-content {
     .card-block {
       .card {
         &-footer {
-          .btn {
-            padding: 10px 30px;
+          display: flex;
+          button {
+            flex-basis: 50%;
+            &.modal-btn {
+              color: var(--red);
+            }
             &:last-of-type {
               margin-left: 5px;
             }
           }
         }
       }
+    }
+  }
+  .new-product {
+    .content {
+      width: 800px;
+    }
+    form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }

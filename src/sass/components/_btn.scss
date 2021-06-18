@@ -1,10 +1,16 @@
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
 .btn,
 .btn-sm,
 .btn-lg {
   border: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: transparent;
-  padding: 10px 20px;
+  padding: 10px 10px;
   font-size: 15px;
   color: white;
   border-radius: 5px;
@@ -18,7 +24,7 @@
     font-size: 13px;
   }
   &-lg {
-    padding: 14px 24px;
+    padding: 14px 12px;
     font-size: 18px;
   }
 
@@ -94,7 +100,6 @@
     }
   }
 
-
   // Social Media
   &-facebook {
     background-color: #3b5998;
@@ -133,12 +138,12 @@
     }
   }
   &-linkedin {
-    background-color: #0077B5;
+    background-color: #0077b5;
     &:hover {
       background-color: #01679e;
     }
     &-light {
-      color: #0077B5;
+      color: #0077b5;
       &:hover {
         text-decoration: underline;
       }

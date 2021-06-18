@@ -1,0 +1,13 @@
+.orders {
+  padding: 10px 25px;
+  overflow-x: auto;
+  .badge {
+    font-size: 13px;
+  }
+  .rate {
+    .modal-btn {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}

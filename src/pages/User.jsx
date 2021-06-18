@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { connect } from "react-redux";
 
-const User = props => {
-
+const User = (props) => {
   const [user, setUser] = useState(props.user);
 
   const handleChange = (e) => {
     const name = e.target.name;
-    setUser({...user, [name]: e.target.value});
-  }
+    setUser({ ...user, [name]: e.target.value });
+  };
 
   const onSave = (e) => {
     e.preventDefault();
-    props.dispatch({ type: "UPDATE_USER", payload: {...user} });
-  }
+    props.dispatch({ type: "UPDATE_USER", payload: { ...user } });
+  };
 
   return (
     <div className="user-settings">
@@ -22,8 +21,8 @@ const User = props => {
       </header>
       <div className="content">
         <form>
-          <div className="user-img">
-            <img src={user.image} alt={user.username}/>
+          <div className="changable-img">
+            <img src={user.image} alt={user.username} />
             <div className="img-change">
               <i className="fas fa-camera"></i>
               <span>Change Your Picture</span>
@@ -49,19 +48,19 @@ const User = props => {
             <label htmlFor="twitter">Twitter:</label>
             <input type="url" name="twitter" id="twitter" value={user.twitter} onChange={handleChange} />
           </div>
-          <button className="btn btn-primary" onClick={onSave}><i className='fas fa-save'></i> Save</button>
+          <button className="btn btn-primary" onClick={onSave}>
+            <i className="fas fa-save"></i> Save
+          </button>
         </form>
       </div>
     </div>
   );
-}
- 
+};
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
   };
-}
-
+};
 
 export default connect(mapStateToProps)(User);

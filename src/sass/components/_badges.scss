@@ -1,0 +1,35 @@
+.badge {
+  font-weight: bold;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 3px;
+
+  &-dark {
+    background-color: var(--dark);
+  }
+  &-red {
+    background-color: var(--red);
+  }
+  &-yellow {
+    background-color: var(--yellow);
+  }
+  &-orange {
+    background-color: var(--orange);
+  }
+  &-blue {
+    background-color: var(--blue);
+  }
+  &-green {
+    background-color: var(--green);
+  }
+
+  &-shipped {
+    background-color: var(--red);
+  }
+  &-arrived {
+    background-color: var(--yellow);
+  }
+  &-delivered {
+    background-color: var(--green);
+  }
+}

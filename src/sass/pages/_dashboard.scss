@@ -1,0 +1,41 @@
+.dashboard {
+  padding: 30px 25px;
+  overflow-x: auto;
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    .stat-block {
+      flex-basis: 22%;
+      background-color: var(--dark);
+      color: white;
+      box-shadow: 0 6px 10px -4px rgba(51, 51, 51, 0.3);
+      border-radius: 5px;
+      padding: 20px 15px;
+      position: relative;
+      p {
+        opacity: 0.9;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      h3 {
+        margin: 5px 0 0 0;
+        font-size: 25px;
+      }
+      .icon {
+        position: absolute;
+        right: 30px;
+        top: 26px;
+        font-size: 18px;
+        width: 50px;
+        background: var(--green);
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 50%;
+      }
+    }
+  }
+  .chart {
+  }
+}

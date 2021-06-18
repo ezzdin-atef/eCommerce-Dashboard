@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+.wrapper {
+  display: flex;
+}
+
+main {
+  transition: margin-left 0.3s;
+  flex-grow: 1;
+  overflow-x: hidden;
+  margin-left: 280px;
+  min-height: 100vh;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+.o-zere {
+  opacity: 0;
+}
+
+@import "./abstracts/variables";
+
+@import "./base/reset";
+
+@import "./components/btn";
+@import "./components/tables";
+@import "./components/menu";
+@import "./components/config";
+@import "./components/modal";
+@import "./components/badges";
+@import "./components/forms";
+
+@import "./layout/navigation";
+
+@import "./pages/dashboard";
+@import "./pages/orders";
+@import "./pages/wishlist";
+@import "./pages/settings";
+@import "./pages/whatisnew";
+@import "./pages/alter";
+@import "./pages/products";
+
+@import "./componentsPage";
