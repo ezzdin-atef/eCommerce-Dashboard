@@ -1,8 +1,10 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import RatePopup from "../components/modals/RatePopup";
 
-const Orders = (props) => {
+const Orders = () => {
+  const orders = useSelector((state) => state.orders.value);
+
   const displayStars = (rate) => {
     let stars = [];
     for (let i = 1; i <= rate; i++) {
@@ -31,7 +33,7 @@ const Orders = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.orders.map((el) => (
+          {orders.map((el) => (
             <tr key={el.id}>
               <td>{el.id}</td>
               <td>{el.title}</td>
@@ -52,10 +54,4 @@ const Orders = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    orders: state.orders,
-  };
-};
-
-export default connect(mapStateToProps)(Orders);
+export default Orders;

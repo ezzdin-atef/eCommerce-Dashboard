@@ -1,19 +1,17 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
+import { remove } from "../redux/notifications";
 
-
-const Notifications = props => {
+const Notifications = () => {
   const [open, setOpen] = useState(false);
-  const  dropdownMenu = useRef(null);
+  const dropdownMenu = useRef(null);
+  const notifications = useSelector((state) => state.notifications.value);
+  const dispatch = useDispatch();
 
   const handleOpen = () => {
     setOpen(!open);
-  }
-
-  const handleDelete = (e) => {
-    props.dispatch({ type: 'DELETE_NOTIFICATION', payload: { element: e.target.closest("li").innerText } });
-  }
+  };
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -21,37 +19,43 @@ const Notifications = props => {
         setOpen(false);
       }
     }
-    
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-    }
+    };
   }, [dropdownMenu]);
 
   return (
     <div className="dropdown">
-      <li onClick={handleOpen}><i className="fas fa-bell"></i><span>{props.notifications.length}</span></li>
-      {open && <motion.div ref={dropdownMenu} className="notification" 
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        {props.notifications.length === 0? <p className="alter">There is no notification</p> : 
-        <ul>
-          {props.notifications.map((el, index) => (
-            <React.Fragment key={index}>
-              <li>{el} <span className="fas fa-times close" onClick={handleDelete}></span></li> 
-            </React.Fragment>
-          ))}
-        </ul>
-        }
-      </motion.div>}
+      <li onClick={handleOpen}>
+        <i className="fas fa-bell"></i>
+        <span>{notifications.length}</span>
+      </li>
+      {open && (
+        <motion.div
+          ref={dropdownMenu}
+          className="notification"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          {notifications.length === 0 ? (
+            <p className="alter">There is no notification</p>
+          ) : (
+            <ul>
+              {notifications.map((el, index) => (
+                <React.Fragment key={index}>
+                  <li>
+                    {el} <span className="fas fa-times close" onClick={() => dispatch(remove(el))}></span>
+                  </li>
+                </React.Fragment>
+              ))}
+            </ul>
+          )}
+        </motion.div>
+      )}
     </div>
   );
-}
- 
-const mapStateToProps = (state) => {
-  return {
-    notifications: state.notifications
-  };
-}
-export default connect(mapStateToProps)(Notifications);
+};
+
+export default Notifications;

@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import Modal from "../Modal";
-import { connect } from "react-redux";
-import { motion, AnimatePresence } from "framer-motion";
+import { useSelector, useDispatch } from "react-redux";
+import { rate as addRate } from "../../redux/orders";
 
 const RatePopup = (props) => {
   const [rate, setRate] = useState(null);
+  const orders = useSelector((state) => state.orders.value);
+  const dispatch = useDispatch();
 
   const handleSave = (e) => {
     // Save to database
     if (!rate) return null;
 
-    props.dispatch({ type: "ADD_RATE", payload: { id: props.id, rate: rate } });
+    dispatch(addRate({ id: props.id, rate: rate }));
     return true;
   };
 
@@ -42,4 +44,4 @@ const RatePopup = (props) => {
   );
 };
 
-export default connect()(RatePopup);
+export default RatePopup;

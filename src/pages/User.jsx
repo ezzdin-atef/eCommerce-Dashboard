@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { update } from "../redux/user";
 
-const User = (props) => {
-  const [user, setUser] = useState(props.user);
+const User = () => {
+  const userData = useSelector((state) => state.user.value);
+  const [user, setUser] = useState(userData);
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -11,7 +14,8 @@ const User = (props) => {
 
   const onSave = (e) => {
     e.preventDefault();
-    props.dispatch({ type: "UPDATE_USER", payload: { ...user } });
+    console.log(user);
+    dispatch(update({ ...user }));
   };
 
   return (
@@ -57,10 +61,4 @@ const User = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    user: state.user,
-  };
-};
-
-export default connect(mapStateToProps)(User);
+export default User;

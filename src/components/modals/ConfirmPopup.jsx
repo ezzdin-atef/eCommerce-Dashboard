@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Modal from "../Modal";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
+import { remove } from "../../redux/products";
 
 const ConfirmPopup = (props) => {
+  const dispatch = useDispatch();
+
   const handleConfirm = () => {
-    props.dispatch({ type: "DELETE_PRODUCT", payload: { id: props.id } });
+    dispatch(remove(props.id));
   };
 
   return (
@@ -14,4 +17,4 @@ const ConfirmPopup = (props) => {
   );
 };
 
-export default connect()(ConfirmPopup);
+export default ConfirmPopup;

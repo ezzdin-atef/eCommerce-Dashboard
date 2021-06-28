@@ -1,10 +1,12 @@
-import React from 'react';
-import { connect } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import logo from "../img/logo-mini.png";
-import Notifications from './Notifications';
-import ShoppingCart from './ShoppingCart';
+import Notifications from "./Notifications";
+import ShoppingCart from "./ShoppingCart";
 
-const Menu = props => {
+const Menu = () => {
+  const user = useSelector((state) => state.user.value);
+
   return (
     <div className="menu">
       <img src={logo} alt="logo" />
@@ -13,19 +15,13 @@ const Menu = props => {
         <Notifications />
         <li>
           <div className="user">
-            <img src={props.user.image} alt={props.user.username} />
-            <h3>{props.user.name}</h3>
+            <img src={user.image} alt={user.username} />
+            <h3>{user.name}</h3>
           </div>
         </li>
       </ul>
     </div>
   );
-}
+};
 
-const mapStateToProps = (state) => {
-  return {
-    user: state.user
-  };
-}
-
-export default connect(mapStateToProps)(Menu);
+export default Menu;

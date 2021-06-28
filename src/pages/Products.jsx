@@ -1,11 +1,13 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import ConfirmPopup from "../components/modals/ConfirmPopup";
 import NewProduct from "../components/modals/NewProduct";
 import { motion } from "framer-motion";
 import { Flipper, Flipped } from "react-flip-toolkit";
 
 const Products = (props) => {
+  const products = useSelector((state) => state.products.value);
+
   const AlterDiv = () => {
     return (
       <motion.div className="alter" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
@@ -28,10 +30,10 @@ const Products = (props) => {
         <h2>Your Products</h2>
         <NewProduct />
       </header>
-      {props.products.length !== 0 ? (
-        <Flipper flipKey={props.products}>
+      {products.length !== 0 ? (
+        <Flipper flipKey={products}>
           <div className="products-content">
-            {props.products.map((el) => (
+            {products.map((el) => (
               <Flipped key={el.id} flipId={el.id}>
                 <div className="card-block">
                   <div className="card">
@@ -60,10 +62,4 @@ const Products = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    products: state.products,
-  };
-};
-
-export default connect(mapStateToProps)(Products);
+export default Products;

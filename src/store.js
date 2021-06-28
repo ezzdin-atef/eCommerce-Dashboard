@@ -1,6 +1,18 @@
-import { createStore } from 'redux';
-import reducer from './reducers';
+import { configureStore } from "@reduxjs/toolkit";
+import notificationsSlice from "./redux/notifications";
+import productsSlice from "./redux/products";
+import shoppingCartSlice from "./redux/shoppingCart";
+import userSlice from "./redux/user";
+import wishlistSlice from "./redux/wishlist";
+import ordersSlice from "./redux/orders";
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
-export default store;
+export default configureStore({
+  reducer: {
+    notifications: notificationsSlice,
+    products: productsSlice,
+    shoppingCart: shoppingCartSlice,
+    user: userSlice,
+    wishlist: wishlistSlice,
+    orders: ordersSlice,
+  },
+});

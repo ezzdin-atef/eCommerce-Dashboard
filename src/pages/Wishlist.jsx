@@ -1,18 +1,19 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { Flipper, Flipped } from "react-flip-toolkit";
 import { motion } from "framer-motion";
+import { remove } from "../redux/wishlist";
+import { add } from "../redux/shoppingCart";
 
-const Wishlist = (props) => {
-  const handleDelete = (id) => {
-    props.dispatch({ type: "DELETE_WISHLIST", payload: { id: id } });
-  };
+const Wishlist = () => {
+  const wishlist = useSelector((state) => state.wishlist.value);
+  const dispatch = useDispatch();
 
   const handleAddToCart = (el) => {
     toast.success("The Item added successfully 🎉 ");
-    props.dispatch({ type: "ADD_TO_SHOPPING_CART", payload: { ...el } });
+    dispatch(add({ ...el }));
   };
 
   const AlterDiv = () => {
@@ -34,16 +35,16 @@ const Wishlist = (props) => {
       <header>
         <h2>Your Wishlist</h2>
       </header>
-      {props.wishlist.length !== 0 ? (
-        <Flipper flipKey={props.wishlist}>
+      {wishlist.length !== 0 ? (
+        <Flipper flipKey={wishlist}>
           <div className="wishlist-content">
-            {props.wishlist.map((el) => (
+            {wishlist.map((el) => (
               <Flipped key={el.id} flipId={el.id}>
                 <div key={el.id} className="card-block">
                   <div className="card">
                     <div className="card-img">
                       <img src={el.img} alt="" />
-                      <span onClick={() => handleDelete(el.id)}>
+                      <span onClick={() => dispatch(remove(el.id))}>
                         <i className="fas fa-heart"></i>
                       </span>
                     </div>
@@ -69,10 +70,4 @@ const Wishlist = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    wishlist: state.wishlist,
-  };
-};
-
-export default connect(mapStateToProps)(Wishlist);
+export default Wishlist;
