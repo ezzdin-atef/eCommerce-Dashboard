@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import ConfirmPopup from "../components/modals/ConfirmPopup";
 import NewProduct from "../components/modals/NewProduct";
+import EditProduct from "../components/modals/EditProduct";
 import { motion } from "framer-motion";
 import { Flipper, Flipped } from "react-flip-toolkit";
 
@@ -41,13 +42,11 @@ const Products = (props) => {
                       <img src={el.img} alt="" />
                     </div>
                     <div className="card-content">
-                      <h4>{el.title}</h4>
+                      <h4>{el.name}</h4>
                     </div>
                     <div className="card-footer">
-                      <button className="btn btn-warning">
-                        <i className="fas fa-edit"></i> Edit
-                      </button>
-                      <ConfirmPopup id={el.id} title={el.title} />
+                      <EditProduct id={el.id} productName={el.name} />
+                      <ConfirmPopup id={el.id} title={el.name} />
                     </div>
                   </div>
                 </div>

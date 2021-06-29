@@ -32,7 +32,13 @@ const RatePopup = (props) => {
   };
 
   return (
-    <Modal className="" text="Rate The Product" title={"Rate " + props.title} submit={handleSave}>
+    <Modal
+      className=""
+      text="Rate The Product"
+      title={"Rate " + props.title}
+      submit={handleSave}
+      btnClass="btn btn-xm btn-link"
+    >
       <div className="stars">
         <i className="far fa-star" onClick={(e) => handleClickStars(e, "1")}></i>
         <i className="far fa-star" onClick={(e) => handleClickStars(e, "2")}></i>

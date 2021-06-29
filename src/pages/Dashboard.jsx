@@ -1,48 +1,33 @@
 import React, { useState } from "react";
 import { Bar, Line, Pie, Doughnut } from "react-chartjs-2";
+import Table from "../components/Table";
 
 const Dashboard = () => {
   const [data, setData] = useState({
-    labels: ["2015", "2016", "2017", "2018", "2019", "2020"],
+    labels: ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
     datasets: [
       {
-        label: "Users",
-        data: [1000, 1500, 1200, 2000, 3000, 3100],
-        backgroundColor: "rgba(255, 255, 255, 0.8)",
-        hoverBackgroundColor: "rgba(255, 255, 255, 1)",
-        borderWidth: 1,
+        label: "Revenue",
+        data: [3550, 10000, 12000, 15500, 11000, 50000, 80000, 30000, 40000, 33000, 55000, 52000],
+        backgroundColor: "rgba(75,192,192,1)",
+        hoverBackgroundColor: "rgba(75,192,192,0.8)",
+        borderColor: "rgb(75, 192, 192)",
         fill: false,
-      },
-      {
-        label: "Revnu",
-        data: [500, 1500, 3000, 5000, 7000, 100000],
-        backgroundColor: "rgba(255, 255, 255, 0.8)",
-        hoverBackgroundColor: "rgba(255, 255, 255, 1)",
         borderWidth: 1,
-        fill: false,
       },
     ],
   });
 
   const [options, setOptions] = useState({
-    scales: {
-      yAxes: [
-        {
-          type: "linear",
-          display: true,
-          position: "left",
-          id: "y-axis-1",
-        },
-        {
-          type: "linear",
-          display: true,
-          position: "right",
-          id: "y-axis-2",
-          gridLines: {
-            drawOnArea: false,
-          },
-        },
-      ],
+    legend: {
+      display: false,
+      position: "right",
+    },
+    labels: {
+      font: {
+        family: "Open Sans",
+        size: 25,
+      },
     },
   });
 
@@ -80,10 +65,95 @@ const Dashboard = () => {
       </div>
 
       <div className="chart">
-        <Line data={data} options={options} />
+        <h3 className="chart-title">Revenue($):</h3>
+        <Line data={data} options={options} height={80} />
+      </div>
+
+      <div className="tables">
+        <div className="dashboard-box">
+          <h3 className="table-title">Latest Users:</h3>
+          <Table thead={["#ID", "Name", "Email"]}>
+            {users.map((el) => (
+              <tr key={el.id}>
+                <td>{el.id}</td>
+                <td>{el.name}</td>
+                <td>{el.email}</td>
+              </tr>
+            ))}
+          </Table>
+        </div>
+
+        <div className="dashboard-box">
+          <h3 className="table-title">Top Sellers:</h3>
+          <Table thead={["#ID", "Name", "Profits"]}>
+            {topUsers.map((el) => (
+              <tr key={el.id}>
+                <td>{el.id}</td>
+                <td>{el.name}</td>
+                <td>${el.profits}</td>
+              </tr>
+            ))}
+          </Table>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Dashboard;
+
+const users = [
+  {
+    id: "116515",
+    name: "Mohamed Ahmed",
+    email: "mohamed@yahoo.com",
+  },
+  {
+    id: "196515",
+    name: "Mohamed Amr",
+    email: "mohamed@hotmail.com",
+  },
+  {
+    id: "156515",
+    name: "Mahmoud Sobhy",
+    email: "sobhy@yahoo.com",
+  },
+  {
+    id: "116989",
+    name: "Abdelrahman Ahmed",
+    email: "7ema@yahoo.com",
+  },
+  {
+    id: "116566",
+    name: "Eslam Mohamed",
+    email: "eslam@gmail.com",
+  },
+];
+
+const topUsers = [
+  {
+    id: "116515",
+    name: "Mohamed Ahmed",
+    profits: 5987,
+  },
+  {
+    id: "196515",
+    name: "Mohamed Amr",
+    profits: 4697,
+  },
+  {
+    id: "156515",
+    name: "Mahmoud Sobhy",
+    profits: 4569,
+  },
+  {
+    id: "116989",
+    name: "Abdelrahman Ahmed",
+    profits: 4069,
+  },
+  {
+    id: "116566",
+    name: "Eslam Mohamed",
+    profits: 3579,
+  },
+];

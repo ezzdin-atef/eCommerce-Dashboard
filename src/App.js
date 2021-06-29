@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "./Layout";
-import Config from "./components/Config";
 import Dashboard from "./pages/Dashboard";
 import Orders from "./pages/Orders";
 import Products from "./pages/Products";
@@ -19,7 +18,6 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Layout>
-          <Config />
           <ToastContainer className="toastify" />
           <Switch>
             <Route path="/orders" component={Orders} />

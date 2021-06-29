@@ -19,6 +19,10 @@ button {
   transition: background-color 0.2s ease-in-out;
 
   // Sizes
+  &-xm {
+    padding: 3px 5px;
+    font-size: 13px;
+  }
   &-sm {
     padding: 7px 10px;
     font-size: 13px;
@@ -98,6 +102,12 @@ button {
         text-decoration: underline;
       }
     }
+  }
+
+  &-link {
+    color: var(--dark);
+    text-decoration: underline;
+    cursor: pointer;
   }
 
   // Social Media

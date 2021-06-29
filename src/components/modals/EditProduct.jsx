@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "../Modal";
-import { useDispatch } from "react-redux";
-import { add } from "../../redux/products";
+import { useDispatch, useSelector } from "react-redux";
+import { update } from "../../redux/products";
 
-export default function NewProduct() {
+export default function EditProduct(props) {
   const [product, setProduct] = useState({
     name: "",
     price: "",
@@ -17,6 +17,7 @@ export default function NewProduct() {
       category: "",
     },
   });
+  const products = useSelector((state) => state.products.value);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -36,48 +37,29 @@ export default function NewProduct() {
   };
 
   const handleSubmit = (e) => {
-    const { name, price, stock, category, img, errors } = product;
-    if (name === "") errors.name = "This field should not be empty!";
-    else errors.name = "";
-
-    if (price === "") errors.price = "This field should not be empty!";
-    else errors.price = "";
-
-    if (stock === "") errors.stock = "This field should not be empty!";
-    else errors.stock = "";
-
-    if (category === "") errors.category = "This field should not be empty!";
-    else errors.category = "";
+    const { id, name, price, stock, category, img, errors } = product;
 
     if (errors.name === "" && errors.price === "" && errors.stock === "" && errors.category === "") {
-      dispatch(add({ name, price, stock, category, img }));
-      setProduct({
-        name: "",
-        price: "",
-        stock: "",
-        category: "",
-        img: "https://via.placeholder.com/400",
-        errors: {
-          name: "",
-          price: "",
-          stock: "",
-          category: "",
-        },
-      });
+      dispatch(update({ id, name, price, stock, category, img }));
       return true;
     }
     setProduct({ ...product, errors: errors });
     return false;
   };
 
+  useEffect(() => {
+    const findProduct = products.find((el) => el.id === props.id);
+    setProduct({ ...product, ...findProduct });
+  }, []);
+
   return (
     <Modal
       className="new-product"
-      text={[<i className="fas fa-plus"></i>, " Add New"]}
-      title="Add New Product"
+      text={[<i className="fas fa-edit"></i>, " Edit"]}
+      title="Edit Product"
       submit={handleSubmit}
-      submitBtnText="Add Product"
-      btnClass="btn btn-primary"
+      submitBtnText="Save Product"
+      btnClass="btn btn-warning"
     >
       <form>
         <div className="changable-img">

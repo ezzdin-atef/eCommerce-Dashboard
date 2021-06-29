@@ -1,12 +1,10 @@
 .menu {
-  background-color: #f1f1f1;
-  // border-radius: 10px;
+  background-color: #00adb5;
   padding: 10px 10px;
-  // margin: 15px;
-  // box-shadow: 0 3px 20px 0 #2646532e;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  color: #ffff;
   img {
     width: 35px;
   }
@@ -35,6 +33,9 @@
           border-radius: 50%;
           top: -7px;
           right: -10px;
+        }
+        i {
+          color: #fff;
         }
       }
     }
@@ -190,17 +191,18 @@
         }
       }
     }
-    .user {
-      display: flex;
-      align-items: center;
-      margin-left: 8px;
-      img {
-        border-radius: 50%;
-      }
-      h3 {
-        font-size: 16px;
-        margin: 0 5px;
-      }
+  }
+  .user {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    img {
+      border-radius: 50%;
+    }
+    h3 {
+      font-size: 16px;
+      margin: 0 5px;
+      color: #fff;
     }
   }
 }

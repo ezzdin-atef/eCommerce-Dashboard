@@ -9,7 +9,6 @@ const Menu = () => {
 
   return (
     <div className="menu">
-      <img src={logo} alt="logo" />
       <ul className="list">
         <ShoppingCart />
         <Notifications />

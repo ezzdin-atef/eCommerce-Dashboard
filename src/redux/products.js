@@ -14,49 +14,49 @@ export const productsSlice = createSlice({
       {
         id: "5465465456",
         img: samsungnote20,
-        title: "Samsung Note 20",
+        name: "Samsung Note 20",
         price: "999",
         stock: "3000",
       },
       {
         id: "6484541",
         img: asus,
-        title: "Philips Headphone",
+        name: "Philips Headphone",
         price: "335",
         stock: "15",
       },
       {
         id: "8945612132161",
         img: hp,
-        title: "HP Laptop",
+        name: "HP Laptop",
         price: "1300",
         stock: "30",
       },
       {
         id: "61616515165",
         img: lenovoideapad,
-        title: "Lenovo IdeaPad",
+        name: "Lenovo IdeaPad",
         price: "899",
         stock: "100",
       },
       {
         id: "23515611561",
         img: applewatch,
-        title: "Apple Watch Series 3",
+        name: "Apple Watch Series 3",
         price: "335",
         stock: "15",
       },
       {
         id: "654894894984",
         img: huaweiLaptop,
-        title: "HUAWEI Honor Magicbook",
+        name: "HUAWEI Honor Magicbook",
         price: "1399",
         stock: "26",
       },
       {
         id: "8978461321",
         img: SamsungGalaxyS20,
-        title: "Samsung Galaxy S20 Ultra",
+        name: "Samsung Galaxy S20 Ultra",
         price: "1099",
         stock: "10",
       },
@@ -70,7 +70,7 @@ export const productsSlice = createSlice({
       state.value.push({ ...action.payload, id: new Date().valueOf() });
     },
     update: (state, action) => {
-      const index = state.value.findIndex((el) => el.action.payload.id);
+      const index = state.value.findIndex((el) => el.id === action.payload.id);
       state.value[index] = action.payload;
     },
   },

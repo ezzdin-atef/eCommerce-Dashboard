@@ -37,5 +37,33 @@
     }
   }
   .chart {
+    background-color: #fff;
+    margin: 30px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px 10px rgba(0, 0, 0, 0.08);
+
+    &-title {
+      font-size: 20px;
+      padding: 5px 0;
+      margin: 10px 0 15px 0;
+      font-family: "Open Sans";
+      color: var(--dark);
+    }
+  }
+  &-box {
+    background-color: #fff;
+    margin: 30px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .tables {
+    display: flex;
+    justify-content: space-between;
+    & > div {
+      flex-basis: 48%;
+    }
   }
 }

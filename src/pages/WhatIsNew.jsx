@@ -21,11 +21,19 @@ const WhatIsNew = () => {
         },
         {
           type: "feature",
-          item: "Add New Post",
+          item: "Add New Product",
+        },
+        {
+          type: "feature",
+          item: "Edit Product",
         },
         {
           type: "improve",
           item: "Use Redux Toolkit",
+        },
+        {
+          type: "improve",
+          item: "Finish Dashboard Statistics",
         },
       ],
     },

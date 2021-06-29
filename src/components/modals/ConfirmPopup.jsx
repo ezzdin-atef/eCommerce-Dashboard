@@ -11,7 +11,12 @@ const ConfirmPopup = (props) => {
   };
 
   return (
-    <Modal text={[<i className="fas fa-trash-alt"></i>, " Delete"]} title="Are you sure?" submit={handleConfirm}>
+    <Modal
+      text={[<i className="fas fa-trash-alt"></i>, " Delete"]}
+      title="Are you sure?"
+      submit={handleConfirm}
+      btnClass="btn btn-danger-light"
+    >
       <p>Are you sure you want to delete "{props.title}"</p>
     </Modal>
   );
