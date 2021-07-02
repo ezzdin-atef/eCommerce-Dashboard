@@ -4,6 +4,14 @@ import logo from "../img/logo-mini.png";
 import { Flipper, Flipped } from "react-flip-toolkit";
 import Dropdown from "./Dropdown";
 
+/*
+ * Navigation Component to view navigation sidebar
+ * @props
+ * menu: array of objects [{name, icon, link, submenu}]
+ * sitename: string
+ * sitelogo: IMAGE
+ */
+
 const Navigation = (props) => {
   const [dropdownStatus, setDropdownStatus] = useState(false);
   // Handle Collapse
@@ -28,49 +36,30 @@ const Navigation = (props) => {
       </header>
       <Flipper flipKey={dropdownStatus} spring="noWobble">
         <ul>
-          <li>
-            <NavLink exact to="/">
-              <i className="fas fa-tachometer-alt"></i> <span>Dashboard</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/orders">
-              <i className="fas fa-box"></i> <span>Orders</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/products">
-              <i className="fas fa-boxes"></i> <span>Products</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/wishlist">
-              <i className="fas fa-bookmark"></i> <span>Wishlist</span>
-            </NavLink>
-          </li>
-          <Dropdown
-            title="Components"
-            icon={<i className="fas fa-cube"></i>}
-            link="/components"
-            subMenu={{ Buttons: "/buttons", Badges: "/badges" }}
-            dropdownSatusChange={dropdownSatusChange}
-            {...props}
-          />
-          <Dropdown
-            title="Settings"
-            icon={<i className="fas fa-cog"></i>}
-            link="/settings"
-            subMenu={{ User: "/user", Payment: "/payment" }}
-            dropdownSatusChange={dropdownSatusChange}
-            {...props}
-          />
-          <Flipped flipId="15156">
-            <li>
-              <NavLink to="/whatisnew">
-                <i className="fas fa-file-alt"></i> <span>What's New ?</span>
-              </NavLink>
-            </li>
-          </Flipped>
+          {props.menu.map((el) => {
+            if (el.submenu) {
+              return (
+                <Dropdown
+                  title={el.name}
+                  icon={el.icon}
+                  link={el.link}
+                  submenu={el.submenu}
+                  dropdownSatusChange={dropdownSatusChange}
+                  {...props}
+                />
+              );
+            } else {
+              return (
+                <Flipped flipId={Math.random()} translate>
+                  <li>
+                    <NavLink exact to={el.link}>
+                      {el.icon} <span>{el.name}</span>
+                    </NavLink>
+                  </li>
+                </Flipped>
+              );
+            }
+          })}
         </ul>
       </Flipper>
     </nav>

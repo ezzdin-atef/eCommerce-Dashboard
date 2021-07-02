@@ -72,7 +72,7 @@ export default function NewProduct() {
 
   return (
     <Modal
-      className="new-product"
+      modelClass="new-product"
       text={[<i className="fas fa-plus"></i>, " Add New"]}
       title="Add New Product"
       submit={handleSubmit}

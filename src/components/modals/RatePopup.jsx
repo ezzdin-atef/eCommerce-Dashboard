@@ -16,19 +16,15 @@ const RatePopup = (props) => {
     return true;
   };
 
-  const handleClickStars = (e, rate) => {
-    setRate(rate);
-    e.target.className = "fas fa-star";
-    let prev = e.target.previousSibling;
-    while (prev) {
-      prev.className = "fas fa-star";
-      prev = prev.previousSibling;
+  const displayStars = () => {
+    let stars = [];
+    for (let i = 1; i <= rate; i++) {
+      stars.push(<i key={i} className="fas fa-star" onClick={() => setRate(i)}></i>);
     }
-    let next = e.target.nextSibling;
-    while (next) {
-      next.className = "far fa-star";
-      next = next.nextSibling;
+    for (let i = rate + 1; i <= 5; i++) {
+      stars.push(<i key={i} className="far fa-star" onClick={() => setRate(i)}></i>);
     }
+    return stars;
   };
 
   return (
@@ -39,13 +35,7 @@ const RatePopup = (props) => {
       submit={handleSave}
       btnClass="btn btn-xm btn-link"
     >
-      <div className="stars">
-        <i className="far fa-star" onClick={(e) => handleClickStars(e, "1")}></i>
-        <i className="far fa-star" onClick={(e) => handleClickStars(e, "2")}></i>
-        <i className="far fa-star" onClick={(e) => handleClickStars(e, "3")}></i>
-        <i className="far fa-star" onClick={(e) => handleClickStars(e, "4")}></i>
-        <i className="far fa-star" onClick={(e) => handleClickStars(e, "5")}></i>
-      </div>
+      <div className="stars">{displayStars()}</div>
     </Modal>
   );
 };

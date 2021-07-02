@@ -3,7 +3,7 @@ import Modal from "../Modal";
 import { useDispatch } from "react-redux";
 import { remove } from "../../redux/products";
 
-const ConfirmPopup = (props) => {
+const DeleteProduct = (props) => {
   const dispatch = useDispatch();
 
   const handleConfirm = () => {
@@ -22,4 +22,4 @@ const ConfirmPopup = (props) => {
   );
 };
 
-export default ConfirmPopup;
+export default DeleteProduct;

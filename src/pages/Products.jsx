@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import ConfirmPopup from "../components/modals/ConfirmPopup";
+import DeleteProduct from "../components/modals/DeleteProduct";
 import NewProduct from "../components/modals/NewProduct";
 import EditProduct from "../components/modals/EditProduct";
 import { motion } from "framer-motion";
@@ -46,7 +46,7 @@ const Products = (props) => {
                     </div>
                     <div className="card-footer">
                       <EditProduct id={el.id} productName={el.name} />
-                      <ConfirmPopup id={el.id} title={el.name} />
+                      <DeleteProduct id={el.id} title={el.name} />
                     </div>
                   </div>
                 </div>

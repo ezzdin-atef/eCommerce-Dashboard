@@ -11,8 +11,8 @@ const Orders = () => {
     for (let i = 1; i <= rate; i++) {
       stars.push(<i key={i} className="fas fa-star"></i>);
     }
-    for (let i = rate; i < 5; i++) {
-      stars.push(<i key={i + 1} className="far fa-star"></i>);
+    for (let i = rate + 1; i <= 5; i++) {
+      stars.push(<i key={i} className="far fa-star"></i>);
     }
     return stars;
   };
@@ -34,7 +34,7 @@ const Orders = () => {
             </td>
             <td className="rate">
               {el.status.toLowerCase() === "delivered" &&
-                (el.rate ? displayStars(el.rate) : <RatePopup id={el.id} title={el.title} />)}
+                (el.rate ? displayStars(parseInt(el.rate, 10)) : <RatePopup id={el.id} title={el.title} />)}
             </td>
           </tr>
         ))}

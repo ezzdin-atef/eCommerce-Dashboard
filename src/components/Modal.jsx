@@ -1,6 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+/*
+ * Modal Component to add modal
+ * @props
+ * btnClass: string (class name to the trigger btn)
+ * text: string (trigger btn text)
+ * modelClass: string (class name to the modal)
+ * title: string (modal title)
+ * successBtnClass: string (success btn class)
+ * submitBtnText: string (success btn text)
+ * cancelBtnClass: string (cancel btn class)
+ * submitBtnText: string (cancel btn text)
+ */
+
 export default function Modal(props) {
   const [open, setOpen] = useState(false);
 
@@ -38,7 +51,7 @@ export default function Modal(props) {
             animate={{ opacity: 1 }}
             initial={{ opacity: 0 }}
             exit={{ opacity: 0 }}
-            className={"modal " + props.className}
+            className={"modal " + props.modelClass}
             onClick={handleClose}
           >
             <motion.div animate={{ top: "35%" }} initial={{ top: "-10%" }} exit={{ top: "-30%" }} className="content">

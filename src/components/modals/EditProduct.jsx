@@ -54,7 +54,7 @@ export default function EditProduct(props) {
 
   return (
     <Modal
-      className="new-product"
+      modelClass="new-product"
       text={[<i className="fas fa-edit"></i>, " Edit"]}
       title="Edit Product"
       submit={handleSubmit}
