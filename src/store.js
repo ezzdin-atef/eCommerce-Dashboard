@@ -5,6 +5,7 @@ import shoppingCartSlice from "./redux/shoppingCart";
 import userSlice from "./redux/user";
 import wishlistSlice from "./redux/wishlist";
 import ordersSlice from "./redux/orders";
+import deliverySlice from "./redux/delivery";
 
 export default configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export default configureStore({
     user: userSlice,
     wishlist: wishlistSlice,
     orders: ordersSlice,
+    delivery: deliverySlice,
   },
 });

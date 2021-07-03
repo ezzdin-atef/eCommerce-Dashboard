@@ -35,6 +35,14 @@ const WhatIsNew = () => {
           type: "improve",
           item: "Finish Dashboard Statistics",
         },
+        {
+          type: "feature",
+          item: "Add Delivery Page",
+        },
+        {
+          type: "improve",
+          item: "UI Design",
+        },
       ],
     },
     {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 
 const Payment = (props) => {
   const [payments, setPayments] = useState([
@@ -28,7 +29,7 @@ const Payment = (props) => {
             🙁
           </span>
         </h3>
-        <button className="btn btn-primary">
+        <button className="btn btn-primary" onClick={() => toast.error("This functionality doesn't work yet 😔")}>
           <i className="fas fa-plus"></i> Add New
         </button>
       </motion.div>
@@ -39,7 +40,7 @@ const Payment = (props) => {
     <div className="payment-settings">
       <header>
         <h2>Payment Settings</h2>
-        <button className="btn btn-primary">
+        <button className="btn btn-primary" onClick={() => toast.error("This functionality doesn't work yet 😔")}>
           <i className="fas fa-plus"></i> Add New
         </button>
       </header>

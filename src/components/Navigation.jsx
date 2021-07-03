@@ -51,7 +51,7 @@ const Navigation = (props) => {
               );
             } else {
               return (
-                <Flipped flipId={Math.random()} translate key={el.link}>
+                <Flipped flipId={el.link} translate key={el.link}>
                   <li>
                     <NavLink exact to={el.link}>
                       {el.icon} <span>{el.name}</span>

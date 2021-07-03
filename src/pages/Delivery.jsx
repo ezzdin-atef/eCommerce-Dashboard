@@ -1,53 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { update } from "../redux/delivery";
 import Table from "../components/Table";
 
 export default function Delivery() {
-  const [delivery, setDelivery] = useState([
-    {
-      id: Math.random() * 100000,
-      name: "TP-Link Router",
-      buyer: "Eslam Mohamed",
-      status: "Shipped",
-    },
-    {
-      id: Math.random() * 100000,
-      name: "TP-Link Router",
-      buyer: "Mahmoud Sobhy",
-      status: "Delivered",
-    },
-    {
-      id: Math.random() * 100000,
-      name: "TP-Link Router",
-      buyer: "Ahmed Abo Bakr",
-      status: "Arrived",
-    },
-    {
-      id: Math.random() * 100000,
-      name: "TP-Link Router",
-      buyer: "Eslam Mohamed",
-      status: "Shipped",
-    },
-    {
-      id: Math.random() * 100000,
-      name: "TP-Link Router",
-      buyer: "LOL",
-      status: null,
-    },
-  ]);
-
-  const handleStatusChange = (id, currentStatus) => {
-    const index = delivery.findIndex((el) => el.id === id);
-    const tmpDelivery = [...delivery];
-    if (currentStatus === null) {
-      tmpDelivery[index].status = "Shipped";
-    } else if (currentStatus === "Shipped") {
-      tmpDelivery[index].status = "Arrived";
-    } else if (currentStatus === "Arrived") {
-      tmpDelivery[index].status = "Delivered";
-    }
-
-    setDelivery(tmpDelivery);
-  };
+  const delivery = useSelector((state) => state.delivery.value);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     console.log(delivery);
@@ -68,7 +26,7 @@ export default function Delivery() {
             <td>{el.status}</td>
             <td>
               {el.status !== "Delivered" && (
-                <button className="btn btn-sm btn-warning" onClick={() => handleStatusChange(el.id, el.status)}>
+                <button className="btn btn-sm btn-warning" onClick={() => dispatch(update(el.id))}>
                   {statuses[statuses.findIndex((s) => s === el.status) + 1]}
                 </button>
               )}
