@@ -40,6 +40,7 @@ const Navigation = (props) => {
             if (el.submenu) {
               return (
                 <Dropdown
+                  key={el.link}
                   title={el.name}
                   icon={el.icon}
                   link={el.link}
@@ -50,7 +51,7 @@ const Navigation = (props) => {
               );
             } else {
               return (
-                <Flipped flipId={Math.random()} translate>
+                <Flipped flipId={Math.random()} translate key={el.link}>
                   <li>
                     <NavLink exact to={el.link}>
                       {el.icon} <span>{el.name}</span>

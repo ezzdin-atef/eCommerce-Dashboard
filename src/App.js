@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "./Layout";
 import Dashboard from "./pages/Dashboard";
 import Orders from "./pages/Orders";
+import Delivery from "./pages/Delivery";
 import Products from "./pages/Products";
 import Wishlist from "./pages/Wishlist";
 import WhatIsNew from "./pages/WhatIsNew";
@@ -21,6 +22,7 @@ function App() {
           <ToastContainer className="toastify" />
           <Switch>
             <Route path="/orders" component={Orders} />
+            <Route path="/delivery" component={Delivery} />
             <Route path="/products" component={Products} />
             <Route path="/wishlist" component={Wishlist} />
             <Route path="/whatisnew" component={WhatIsNew} />

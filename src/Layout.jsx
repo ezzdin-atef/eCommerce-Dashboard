@@ -17,6 +17,12 @@ const Layout = (props) => {
       submenu: null,
     },
     {
+      name: "Delivery",
+      icon: <i className="fas fa-box"></i>,
+      link: "/delivery",
+      submenu: null,
+    },
+    {
       name: "Products",
       icon: <i className="fas fa-boxes"></i>,
       link: "/products",
