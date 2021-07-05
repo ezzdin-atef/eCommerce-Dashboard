@@ -73,7 +73,7 @@ export default function NewProduct() {
   return (
     <Modal
       modelClass="new-product"
-      text={[<i className="fas fa-plus"></i>, " Add New"]}
+      text={[<i className="fas fa-plus"></i>, <span>Add New</span>]}
       title="Add New Product"
       submit={handleSubmit}
       submitBtnText="Add Product"

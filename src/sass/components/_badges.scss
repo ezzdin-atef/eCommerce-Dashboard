@@ -24,12 +24,12 @@
   }
 
   &-shipped {
-    background-color: var(--red);
+    @extend .badge-red;
   }
   &-arrived {
-    background-color: var(--yellow);
+    @extend .badge-yellow;
   }
   &-delivered {
-    background-color: var(--green);
+    @extend .badge-green;
   }
 }

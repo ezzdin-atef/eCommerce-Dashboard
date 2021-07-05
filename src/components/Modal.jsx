@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
  * successBtnClass: string (success btn class)
  * submitBtnText: string (success btn text)
  * cancelBtnClass: string (cancel btn class)
- * submitBtnText: string (cancel btn text)
+ * cancelBtnText: string (cancel btn text)
  */
 
 export default function Modal(props) {
@@ -65,7 +65,7 @@ export default function Modal(props) {
                   {props.submitBtnText ? props.submitBtnText : "Submit"}
                 </button>
                 <button id="close" className={props.cancelBtnClass || "btn btn-danger-light"} onClick={handleShow}>
-                  {props.closexBtnText ? props.submitBtnText : "Close"}
+                  {props.cancelBtnText ? props.cancelBtnText : "Close"}
                 </button>
               </footer>
             </motion.div>

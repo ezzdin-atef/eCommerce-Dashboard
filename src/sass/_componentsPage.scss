@@ -1,6 +1,4 @@
 .components {
-  padding: 10px 25px;
-  overflow-x: auto;
   header {
     h2 {
       font-size: 25px;
@@ -15,6 +13,10 @@
   &-section {
     flex-basis: 48%;
     margin: 5px 0;
+
+    @include responsive-tablet {
+      flex-basis: 100%;
+    }
     button {
       margin: 5px;
       i {

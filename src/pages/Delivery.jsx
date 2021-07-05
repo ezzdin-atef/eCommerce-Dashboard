@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { update } from "../redux/delivery";
 import Table from "../components/Table";
@@ -23,10 +23,12 @@ export default function Delivery() {
             <td>{el.id}</td>
             <td>{el.name}</td>
             <td>{el.buyer}</td>
-            <td>{el.status}</td>
+            <td>
+              <span className={"badge badge-" + el.status?.toLowerCase()}>{el.status}</span>
+            </td>
             <td>
               {el.status !== "Delivered" && (
-                <button className="btn btn-sm btn-warning" onClick={() => dispatch(update(el.id))}>
+                <button className="btn btn-sm btn-primary-light" onClick={() => dispatch(update(el.id))}>
                   {statuses[statuses.findIndex((s) => s === el.status) + 1]}
                 </button>
               )}

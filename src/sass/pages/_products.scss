@@ -3,9 +3,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .modal-btn {
-      @extend .btn;
-      @extend .btn-primary;
+
+    button {
+      span {
+        margin-left: 5px;
+        @include responsive-mobile {
+          display: none;
+        }
+      }
     }
   }
   &-content {
@@ -32,14 +37,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-  }
-}
-
-@media (max-width: 576px) {
-  .products {
-    header {
-      flex-direction: column;
     }
   }
 }

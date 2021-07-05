@@ -41,7 +41,7 @@ const ShoppingCart = (props) => {
       {open && (
         <motion.div
           ref={dropdownMenu}
-          className="shopping-cart"
+          className="dropdown-content shopping-cart"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
         >

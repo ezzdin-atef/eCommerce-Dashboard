@@ -50,6 +50,7 @@ export default function EditProduct(props) {
   useEffect(() => {
     const findProduct = products.find((el) => el.id === props.id);
     setProduct({ ...product, ...findProduct });
+    // eslint-disable-next-line
   }, []);
 
   return (

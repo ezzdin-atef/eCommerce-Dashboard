@@ -18,7 +18,7 @@ const Layout = (props) => {
     },
     {
       name: "Delivery",
-      icon: <i className="fas fa-box"></i>,
+      icon: <i className="fa fa-truck"></i>,
       link: "/delivery",
       submenu: null,
     },

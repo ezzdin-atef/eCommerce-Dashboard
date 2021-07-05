@@ -1,24 +1,25 @@
-import React, { useState } from "react";
-import { Bar, Line, Pie, Doughnut } from "react-chartjs-2";
+import React from "react";
+import { Line } from "react-chartjs-2";
+import StatCard from "../components/StatCard";
 import Table from "../components/Table";
 
 const Dashboard = () => {
-  const [data, setData] = useState({
+  const data = {
     labels: ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
     datasets: [
       {
         label: "Revenue",
         data: [3550, 10000, 12000, 15500, 11000, 50000, 80000, 30000, 40000, 33000, 55000, 52000],
-        backgroundColor: "rgba(75,192,192,1)",
-        hoverBackgroundColor: "rgba(75,192,192,0.8)",
-        borderColor: "rgb(75, 192, 192)",
+        backgroundColor: "rgba(66, 95, 128, 1)",
+        hoverBackgroundColor: "rgba(66, 95, 128, 0.7)",
+        borderColor: "rgb(66, 95, 128)",
         fill: false,
         borderWidth: 1,
       },
     ],
-  });
+  };
 
-  const [options, setOptions] = useState({
+  const options = {
     legend: {
       display: false,
       position: "right",
@@ -29,49 +30,25 @@ const Dashboard = () => {
         size: 25,
       },
     },
-  });
+  };
 
   return (
     <div className="dashboard">
       <div className="stats">
-        <div className="stat-block">
-          <p>Users</p>
-          <h3>1516</h3>
-          <span className="icon">
-            <i className="fas fa-users"></i>
-          </span>
-        </div>
-        <div className="stat-block">
-          <p>Earns</p>
-          <h3>$4898</h3>
-          <span className="icon">
-            <i className="fas fa-dollar-sign"></i>
-          </span>
-        </div>
-        <div className="stat-block">
-          <p>Products</p>
-          <h3>789</h3>
-          <span className="icon">
-            <i className="fas fa-box"></i>
-          </span>
-        </div>
-        <div className="stat-block">
-          <p>Performance</p>
-          <h3>89%</h3>
-          <span className="icon">
-            <i className="fas fa-percent"></i>
-          </span>
-        </div>
+        <StatCard title="Users" stat="1516" icon={<i className="fas fa-users"></i>} />
+        <StatCard title="Earns" stat="$4898" icon={<i className="fas fa-dollar-sign"></i>} />
+        <StatCard title="Products" stat="789" icon={<i className="fas fa-box"></i>} />
+        <StatCard title="Performance" stat="89%" icon={<i className="fas fa-percent"></i>} />
       </div>
 
-      <div className="chart">
-        <h3 className="chart-title">Revenue($):</h3>
+      <div className="dashboard-box chart">
+        <h3 className="title">Revenue($)</h3>
         <Line data={data} options={options} height={80} />
       </div>
 
       <div className="tables">
         <div className="dashboard-box">
-          <h3 className="table-title">Latest Users:</h3>
+          <h3 className="title">Latest Users</h3>
           <Table thead={["#ID", "Name", "Email"]}>
             {users.map((el) => (
               <tr key={el.id}>
@@ -84,7 +61,7 @@ const Dashboard = () => {
         </div>
 
         <div className="dashboard-box">
-          <h3 className="table-title">Top Sellers:</h3>
+          <h3 className="title">Top Sellers</h3>
           <Table thead={["#ID", "Name", "Profits"]}>
             {topUsers.map((el) => (
               <tr key={el.id}>

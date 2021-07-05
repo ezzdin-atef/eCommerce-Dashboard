@@ -5,7 +5,7 @@ const WhatIsNew = () => {
   const features = [
     {
       version: "2.0.0",
-      date: "",
+      date: "6/7/2021",
       data: [
         {
           type: "improve",

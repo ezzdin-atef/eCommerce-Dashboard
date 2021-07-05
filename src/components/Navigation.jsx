@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, NavLink, withRouter } from "react-router-dom";
-import logo from "../img/logo-mini.png";
 import { Flipper, Flipped } from "react-flip-toolkit";
 import Dropdown from "./Dropdown";
 
@@ -14,11 +13,6 @@ import Dropdown from "./Dropdown";
 
 const Navigation = (props) => {
   const [dropdownStatus, setDropdownStatus] = useState(false);
-  // Handle Collapse
-  const handleCollapse = (e) => {
-    console.log();
-    e.target.parentNode.parentNode.parentNode.classList.toggle("minimal");
-  };
 
   const dropdownSatusChange = () => {
     setDropdownStatus(!dropdownStatus);
@@ -29,10 +23,9 @@ const Navigation = (props) => {
       <header>
         <h1>
           <Link to="/">
-            <img src={logo} alt="logo" /> <span>eCommerce</span>
+            {/* <img src={logo} alt="logo" /> <span>eCommerce</span> */}e<span>Commerce Dashboard</span>
           </Link>
         </h1>
-        <span className="collapse fas fa-bars" onClick={handleCollapse}></span>
       </header>
       <Flipper flipKey={dropdownStatus} spring="noWobble">
         <ul>

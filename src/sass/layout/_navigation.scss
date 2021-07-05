@@ -6,16 +6,19 @@
   height: 100%;
   z-index: 10;
   position: fixed;
+  transition: width 0.3s;
+
   header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     h1 {
       text-align: center;
-      margin-left: 8px;
+      font-size: 22px;
+      white-space: nowrap;
       a {
         text-decoration: none;
-        color: white;    
+        color: white;
         display: flex;
         align-items: center;
         img {
@@ -24,17 +27,13 @@
         }
       }
     }
-    .collapse {
-      margin: 0 30px 0 20px;
-      cursor: pointer;
-    }
   }
   ul {
     list-style: none;
     margin: 20px 0;
     padding: 10px 20px;
     li {
-      margin: 6px 0;    
+      margin: 6px 0;
       white-space: nowrap;
       overflow: hidden;
       a {
@@ -45,7 +44,7 @@
         display: block;
         border-radius: 5px;
         &.active {
-          background-color: var(--green);
+          background-color: var(--light-dark);
           color: white;
         }
       }
@@ -62,10 +61,16 @@
           font-size: 14px;
           position: absolute;
           right: 10px;
-          top: 14px;
+          top: 13px;
           transform: rotate(0deg);
           transition: transform 0.2s;
           cursor: pointer;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 3px;
         }
         ul {
           margin: 0;
@@ -91,6 +96,7 @@
         &::after {
           transform: rotate(90deg);
           transition: transform 0.2s;
+          // background-color: #8da1b5;
         }
       }
       i {
@@ -102,11 +108,11 @@
 
 .minimal {
   & > main {
+    flex-basis: calc(100% - 70px);
     margin-left: 70px;
   }
   .navigation {
     width: 70px;
-    transition: width 0.3s;
     overflow: hidden;
     header {
       justify-content: center;
@@ -181,7 +187,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@include responsive-desktop {
   .navigation {
     width: 70px;
     position: fixed;

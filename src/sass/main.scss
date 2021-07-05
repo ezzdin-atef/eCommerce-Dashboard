@@ -10,6 +10,8 @@ main {
   overflow-x: hidden;
   margin-left: 280px;
   min-height: 100vh;
+  padding: 10px 25px;
+  overflow-x: auto;
 }
 
 .d-block {
@@ -25,6 +27,7 @@ main {
 }
 
 @import "./abstracts/variables";
+@import "./abstracts/mixins";
 
 @import "./base/reset";
 
@@ -40,6 +43,7 @@ main {
 
 @import "./pages/dashboard";
 @import "./pages/orders";
+@import "./pages/delivery";
 @import "./pages/wishlist";
 @import "./pages/settings";
 @import "./pages/whatisnew";

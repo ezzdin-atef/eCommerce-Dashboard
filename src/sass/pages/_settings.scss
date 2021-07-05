@@ -1,18 +1,44 @@
 .user-settings,
 .payment-settings {
-  padding: 10px 25px;
-  overflow-x: auto;
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     h2 {
       font-size: 25px;
       margin-bottom: 30px;
     }
+    button {
+      span {
+        margin-left: 5px;
+        @include responsive-mobile {
+          display: none;
+        }
+      }
+    }
   }
   .content {
     form {
+      .user-img {
+        @include responsive-mobile {
+          width: 100%;
+        }
+      }
+      .form-input {
+        input {
+          @include responsive-tablet {
+            margin: 10px 0;
+            width: 100%;
+          }
+        }
+        @include responsive-large {
+          width: 100%;
+        }
+        @include responsive-tablet {
+          flex-direction: column;
+        }
+      }
       button {
         padding: 10px 30px;
         i {
@@ -30,6 +56,10 @@
       border-radius: 5px;
       width: 400px;
       position: relative;
+
+      @include responsive-mobile {
+        width: 100%;
+      }
       h4 {
         margin: 0 10px;
       }
@@ -39,61 +69,6 @@
         position: absolute;
         right: 15px;
         justify-self: flex-end;
-      }
-    }
-  }
-}
-
-@media (max-width: 1200px) {
-  .user-settings,
-  .payment-settings {
-    .content {
-      form {
-        .form-input {
-          width: 100%;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .user-settings,
-  .payment-settings {
-    .content {
-      form {
-        .form-input {
-          flex-direction: column;
-          input {
-            margin: 10px 0;
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 576px) {
-  .user-settings,
-  .payment-settings {
-    header {
-      flex-direction: column;
-      h2 {
-        margin-bottom: 10px;
-      }
-      button {
-        margin: 10px 0;
-      }
-    }
-    .content {
-      form {
-        .user-img {
-          width: 100%;
-        }
-      }
-      .payment {
-        width: 100%;
       }
     }
   }

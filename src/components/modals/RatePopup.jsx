@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Modal from "../Modal";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { rate as addRate } from "../../redux/orders";
 
 const RatePopup = (props) => {
   const [rate, setRate] = useState(null);
-  const orders = useSelector((state) => state.orders.value);
   const dispatch = useDispatch();
 
   const handleSave = (e) => {

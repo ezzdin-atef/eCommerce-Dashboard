@@ -30,7 +30,7 @@ const Payment = (props) => {
           </span>
         </h3>
         <button className="btn btn-primary" onClick={() => toast.error("This functionality doesn't work yet 😔")}>
-          <i className="fas fa-plus"></i> Add New
+          <i className="fas fa-plus"></i> <span>Add New</span>
         </button>
       </motion.div>
     );
@@ -41,7 +41,7 @@ const Payment = (props) => {
       <header>
         <h2>Payment Settings</h2>
         <button className="btn btn-primary" onClick={() => toast.error("This functionality doesn't work yet 😔")}>
-          <i className="fas fa-plus"></i> Add New
+          <i className="fas fa-plus"></i> <span>Add New</span>
         </button>
       </header>
       {payments.length > 0 ? (

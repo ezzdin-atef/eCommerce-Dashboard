@@ -1,17 +1,26 @@
 .dashboard {
-  padding: 30px 25px;
-  overflow-x: auto;
+  padding: 30px 0;
   .stats {
     display: flex;
     justify-content: space-between;
-    .stat-block {
+    flex-wrap: wrap;
+    .stat-card {
       flex-basis: 22%;
-      background-color: var(--dark);
+      flex-shrink: 0;
+      background-color: var(--light-dark);
       color: white;
-      box-shadow: 0 6px 10px -4px rgba(51, 51, 51, 0.3);
+      box-shadow: var(--ligh-shadow);
       border-radius: 5px;
-      padding: 20px 15px;
+      padding: 22px 15px;
+      margin: 10px 0;
       position: relative;
+
+      @include responsive-desktop {
+        flex-basis: 48%;
+      }
+      @include responsive-tablet {
+        flex-basis: 100%;
+      }
       p {
         opacity: 0.9;
         font-size: 14px;
@@ -20,50 +29,53 @@
       }
       h3 {
         margin: 5px 0 0 0;
-        font-size: 25px;
+        font-size: 26px;
       }
       .icon {
         position: absolute;
         right: 30px;
-        top: 26px;
-        font-size: 18px;
-        width: 50px;
-        background: var(--green);
-        height: 50px;
-        line-height: 50px;
+        top: 22px;
+        font-size: 20px;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        background: var(--dark);
         text-align: center;
         border-radius: 50%;
       }
     }
   }
-  .chart {
-    background-color: #fff;
-    margin: 30px 0;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 5px 20px 10px rgba(0, 0, 0, 0.08);
 
-    &-title {
-      font-size: 20px;
-      padding: 5px 0;
-      margin: 10px 0 15px 0;
-      font-family: "Open Sans";
-      color: var(--dark);
-    }
-  }
   &-box {
     background-color: #fff;
     margin: 30px 0;
-    padding: 15px;
+    padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 5px 20px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--ligh-shadow);
+
+    .title {
+      font-size: 20px;
+      margin: 0 0 20px 0;
+      font-family: "Open Sans";
+      color: var(--dark-dark);
+    }
   }
 
   .tables {
-    display: flex;
-    justify-content: space-between;
-    & > div {
-      flex-basis: 48%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    min-height: 0;
+    min-width: 0;
+
+    & > .dashboard-box {
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    @include responsive-mobile {
+      grid-template-columns: 1fr;
     }
   }
 }

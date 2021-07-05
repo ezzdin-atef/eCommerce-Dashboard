@@ -84,91 +84,91 @@ const ButtonsPage = () => {
         <div className="components-section" style={{ flexBasis: "100%" }}>
           <h4>Social buttons</h4>
           <button className="btn btn-facebook">
-            <i class="fab fa-facebook-square"></i> Facebook
+            <i className="fab fa-facebook-square"></i> Facebook
           </button>
           <button className="btn btn-twitter">
-            <i class="fab fa-twitter-square"></i> Twitter
+            <i className="fab fa-twitter-square"></i> Twitter
           </button>
           <button className="btn btn-youtube">
-            <i class="fab fa-youtube"></i> Youtube
+            <i className="fab fa-youtube"></i> Youtube
           </button>
           <button className="btn btn-linkedin">
-            <i class="fab fa-linkedin"></i> LinkedIn
+            <i className="fab fa-linkedin"></i> LinkedIn
           </button>
           <button className="btn btn-instagram">
-            <i class="fab fa-instagram"></i> Instagram
+            <i className="fab fa-instagram"></i> Instagram
           </button>
           <button className="btn btn-pinterest">
-            <i class="fab fa-pinterest-square"></i> Pinterest
+            <i className="fab fa-pinterest-square"></i> Pinterest
           </button>
           <button className="btn btn-behance">
-            <i class="fab fa-behance-square"></i> Behance
+            <i className="fab fa-behance-square"></i> Behance
           </button>
           <button className="btn btn-dribbble">
-            <i class="fab fa-dribbble-square"></i> Dribbble
+            <i className="fab fa-dribbble-square"></i> Dribbble
           </button>
           <button className="btn btn-reddit">
-            <i class="fab fa-reddit-alien"></i> Reddit
+            <i className="fab fa-reddit-alien"></i> Reddit
           </button>
 
           <br />
 
           <button className="btn btn-facebook-light">
-            <i class="fab fa-facebook-f"></i> Facebook
+            <i className="fab fa-facebook-f"></i> Facebook
           </button>
           <button className="btn btn-twitter-light">
-            <i class="fab fa-twitter"></i> Twitter
+            <i className="fab fa-twitter"></i> Twitter
           </button>
           <button className="btn btn-youtube-light">
-            <i class="fab fa-youtube"></i> Youtube
+            <i className="fab fa-youtube"></i> Youtube
           </button>
           <button className="btn btn-linkedin-light">
-            <i class="fab fa-linkedin-in"></i> LinkedIn
+            <i className="fab fa-linkedin-in"></i> LinkedIn
           </button>
           <button className="btn btn-instagram-light">
-            <i class="fab fa-instagram"></i> Instagram
+            <i className="fab fa-instagram"></i> Instagram
           </button>
           <button className="btn btn-pinterest-light">
-            <i class="fab fa-pinterest"></i> Pinterest
+            <i className="fab fa-pinterest"></i> Pinterest
           </button>
           <button className="btn btn-behance-light">
-            <i class="fab fa-behance"></i> Behance
+            <i className="fab fa-behance"></i> Behance
           </button>
           <button className="btn btn-dribbble-light">
-            <i class="fab fa-dribbble"></i> Dribbble
+            <i className="fab fa-dribbble"></i> Dribbble
           </button>
           <button className="btn btn-reddit-light">
-            <i class="fab fa-reddit-alien"></i> Reddit
+            <i className="fab fa-reddit-alien"></i> Reddit
           </button>
 
           <br />
 
           <button className="btn btn-round-full btn-facebook">
-            <i class="fab fa-facebook-f"></i>
+            <i className="fab fa-facebook-f"></i>
           </button>
           <button className="btn btn-round-full btn-twitter">
-            <i class="fab fa-twitter"></i>
+            <i className="fab fa-twitter"></i>
           </button>
           <button className="btn btn-round-full btn-youtube">
-            <i class="fab fa-youtube"></i>
+            <i className="fab fa-youtube"></i>
           </button>
           <button className="btn btn-round-full btn-linkedin">
-            <i class="fab fa-linkedin-in"></i>
+            <i className="fab fa-linkedin-in"></i>
           </button>
           <button className="btn btn-round-full btn-instagram">
-            <i class="fab fa-instagram"></i>
+            <i className="fab fa-instagram"></i>
           </button>
           <button className="btn btn-round-full btn-pinterest">
-            <i class="fab fa-pinterest"></i>
+            <i className="fab fa-pinterest"></i>
           </button>
           <button className="btn btn-round-full btn-behance">
-            <i class="fab fa-behance"></i>
+            <i className="fab fa-behance"></i>
           </button>
           <button className="btn btn-round-full btn-dribbble">
-            <i class="fab fa-dribbble"></i>
+            <i className="fab fa-dribbble"></i>
           </button>
           <button className="btn btn-round-full btn-reddit">
-            <i class="fab fa-reddit-alien"></i>
+            <i className="fab fa-reddit-alien"></i>
           </button>
         </div>
       </div>

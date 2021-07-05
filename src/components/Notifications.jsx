@@ -35,7 +35,7 @@ const Notifications = () => {
       {open && (
         <motion.div
           ref={dropdownMenu}
-          className="notification"
+          className="dropdown-content notification"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
         >

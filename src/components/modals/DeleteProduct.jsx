@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Modal from "../Modal";
 import { useDispatch } from "react-redux";
 import { remove } from "../../redux/products";
@@ -16,6 +16,9 @@ const DeleteProduct = (props) => {
       title="Are you sure?"
       submit={handleConfirm}
       btnClass="btn btn-danger-light"
+      successBtnClass="btn btn-danger"
+      submitBtnText="Confirm"
+      cancelBtnClass="btn btn-primary-light"
     >
       <p>Are you sure you want to delete "{props.title}"</p>
     </Modal>

@@ -1,7 +1,5 @@
 .wishlist,
 .products {
-  padding: 10px 25px;
-  overflow-x: auto;
   header {
     h2 {
       font-size: 25px;
@@ -9,14 +7,15 @@
     }
   }
   &-content {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
     .card-block {
-      width: calc(20% - 40px);
-      margin: 20px;
       .card {
         background-color: #fff;
-        box-shadow: 0 0 20px 0 #2646531f;
+        box-shadow: var(--ligh-shadow);
         border-radius: 10px;
         &-img {
           position: relative;
@@ -74,8 +73,6 @@
   .products {
     &-content {
       .card-block {
-        width: calc(50% - 40px);
-        margin: 20px;
       }
     }
   }
@@ -86,8 +83,6 @@
   .products {
     &-content {
       .card-block {
-        width: calc(100%);
-        margin: 20px 0;
       }
     }
   }

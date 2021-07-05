@@ -9,13 +9,7 @@
   right: 0;
   background-color: #26465363;
   z-index: 100;
-  &-btn {
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-    padding: 10px 10px;
-    font-size: 15px;
-  }
+
   .content {
     position: relative;
     top: 35%;
@@ -30,7 +24,7 @@
       align-items: center;
       justify-content: space-between;
       font-size: 16px;
-      padding: 0 5px;
+      padding: 8px 5px;
       h3 {
         margin: 8px 0;
       }
@@ -43,7 +37,7 @@
     .main {
       border-top: 1px solid #f1f1f1;
       border-bottom: 1px solid #f1f1f1;
-      padding: 20px 0;
+      padding: 22px 0;
       .stars {
         i {
           font-size: 30px;
@@ -54,10 +48,9 @@
       display: flex;
       margin-top: 10px;
       justify-content: space-between;
-      padding: 0 5px;
+      padding: 8px 5px;
       button {
         flex-basis: 48%;
-        font-weight: 600;
       }
     }
   }
